@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 class SectorDibujoTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+		void SeAgregaLineaATablero(){
+			SectorDibujo sector = new SectorDibujo();
+			sector.abajo();
+			assertTrue(sector.ObtenerLinea() instanceof Linea);
 	}
 
 }
