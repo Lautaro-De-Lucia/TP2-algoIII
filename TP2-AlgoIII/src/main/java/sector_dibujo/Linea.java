@@ -3,12 +3,18 @@ package sector_dibujo;
 public class Linea {
     Posicion origen;
     Posicion destino;
-    // Color color;
+    Color color;
 
 
     public Linea(Posicion nuevoOrigen, Posicion nuevoDestino){
         this.origen = nuevoOrigen;
         this.destino = nuevoDestino;
+    }
+    
+    public Linea(Posicion nuevoOrigen, Posicion nuevoDestino, Color nuevoColor){
+        this.origen = nuevoOrigen;
+        this.destino = nuevoDestino;
+        this.color = nuevoColor;
     }
 
     public void setDestino(Posicion destino) {

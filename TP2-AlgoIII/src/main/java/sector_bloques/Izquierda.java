@@ -1,6 +1,6 @@
 package sector_bloques;
 
-public class Izquierda {
+public class Izquierda extends Bloque {
 	
 	public void ejecutar() {
 		receptor.izquierda();

@@ -1,11 +1,11 @@
 package sector_dibujo;
 
-public class LapizBajo implements sector_dibujo.Lapiz {
+public class LapizBajo extends Lapiz {
 
     public Linea dibujarLinea(Posicion posicion1, Posicion posicion2){
 
-        coordenadaInicial = new Posicion(posicion1);
-        coordenadaFinal = new Posicion(posicion2);
+        Posicion coordenadaInicial = new Posicion(posicion1);
+        Posicion coordenadaFinal = new Posicion(posicion2);
 
         return (new Linea(coordenadaInicial, coordenadaFinal));
 

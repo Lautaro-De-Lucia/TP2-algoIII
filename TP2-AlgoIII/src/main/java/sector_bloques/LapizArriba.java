@@ -1,6 +1,6 @@
 package sector_bloques;
 
-public class LapizArriba {
+public class LapizArriba extends Bloque{
 
 	public void ejecutar() {
 		receptor.levantarLapiz();

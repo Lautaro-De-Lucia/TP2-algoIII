@@ -1,9 +1,14 @@
 package sector_dibujo;
 
-public interface Lapiz {
+public abstract class Lapiz {
 
-    public Linea dibujarLinea(Posicion posicion1, Posicion posicion2){
-        return dibujarLinea(posicion1, posicion2);
-    }
+	Color colorLapiz = Color.NEGRO;
+	
+	public void cambiarColor(Color nuevoColor) {
+		colorLapiz = nuevoColor;
+	}
+	
+    public abstract Linea dibujarLinea(Posicion posicion1, Posicion posicion2);
+    
 
 }
