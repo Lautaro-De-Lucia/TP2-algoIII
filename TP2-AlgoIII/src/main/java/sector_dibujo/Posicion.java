@@ -2,22 +2,54 @@ package sector_dibujo;
 
 public class Posicion {
 	
-	int coordX;
-	int coordY;
+	private int coordX;
+	private int coordY;
 	
 	public Posicion() {
-		coordX = 0;
-		coordY = 0;
+		this.coordX = 0;
+		this.coordY = 0;
 	}
 	
-	public Posicion (int X, int Y) {
-		coordX = X;
-		coordY = Y;
+	public Posicion(int X, int Y) {
+		this.coordX = X;
+		this.coordY = Y;
 	}
 	
-	public void cambiar(Direccion direccion) {
-		coordX = coordX + direccion.longitud();
-		coordY = coordY + direccion.latitud();
+	public Posicion(Posicion posicionACopiar) {
+		this.coordX = posicionACopiar.obtenerCoordX();
+		this.coordY = posicionACopiar.obtenerCoordY();
+	}
+	
+	public Posicion(Posicion posicionAnterior, Direccion direccionNueva) {
+		
+		Posicion posicionNueva = new Posicion(posicionAnterior.obtenerCoordX(), posicionAnterior.obtenerCoordY());
+		
+		posicionNueva.cambiar(direccionNueva);
+		
+		this.coordX = posicionNueva.obtenerCoordX();
+		this.coordX = posicionNueva.obtenerCoordY();	
+	}
+		
+	public int obtenerCoordX() {
+		return this.coordX;
+	}
+	
+	public int obtenerCoordY() {
+		return this.coordY;
+	}
+		
+	public void cambiar(Direccion direccionNueva) {
+		this.coordX = this.coordX + direccionNueva.obtenerLongitud();
+		this.coordY = this.coordY + direccionNueva.obtenerLatitud();
+	}
+	
+	public boolean igual(Posicion otraPosicion) {
+		if((this.coordX == otraPosicion.obtenerCoordX()) && (this.coordY == otraPosicion.obtenerCoordY()))
+			return true;
+		return false;
 	}
 
 }
+
+
+
