@@ -12,20 +12,28 @@ public class SectorDibujo {
     }
 
     public void abajo(){
-        this.tablero.addLast(personaje.mover(new sur()));
+        Direccion sur = new Direccion();
+        sur.sur();
+    	this.tablero.add(personaje.mover(sur));
     }
 
     public void arriba(){
-        this.tablero.addLast(personaje.mover(new norte()));
+        Direccion norte = new Direccion();
+        norte.norte();
+    	this.tablero.add(personaje.mover(norte));
     }
 
     public void derecha(){
-        this.tablero.addLast(personaje.mover(new este()));
+        Direccion este = new Direccion();
+        este.este();
+    	this.tablero.add(personaje.mover(este));
     }
 
     public void izquierda(){
-        this.tablero.addLast(personaje.mover(new oeste()));
-    }
+        Direccion oeste = new Direccion();
+        oeste.oeste();
+    	this.tablero.add(personaje.mover(oeste));    
+    	}
 
     public void bajarLapiz(){
         this.personaje.bajarLapiz();
