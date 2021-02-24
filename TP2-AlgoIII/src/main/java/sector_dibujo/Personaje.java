@@ -39,18 +39,17 @@ public class Personaje {
 		this.lapiz.cambiarColor(colorNuevo);
 	}
 	
-	public Linea mover(Direccion direccionNueva) {
+	public void mover(Direccion direccionNueva) {
 		
 		Posicion posicionOriginal = new Posicion(this.posicion);
 		Posicion nuevaPosicion = new Posicion(this.posicion, direccionNueva);
 		
-		
         this.posicion = nuevaPosicion;
         this.orientacion = direccionNueva;
         
-        Linea nuevaLinea = this.lapiz.dibujarLinea(posicionOriginal, nuevaPosicion);
+        this.lapiz.dibujarLinea(posicionOriginal, nuevaPosicion);
         
-        return nuevaLinea; 
+        return;
 	}
 		
 }
