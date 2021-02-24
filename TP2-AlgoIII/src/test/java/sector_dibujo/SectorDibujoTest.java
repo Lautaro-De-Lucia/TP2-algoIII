@@ -10,7 +10,7 @@ class SectorDibujoTest {
 		void SeAgregaLineaATablero(){
 			SectorDibujo sector = new SectorDibujo();
 			sector.abajo();
-			assertTrue(sector.ObtenerLinea() instanceof Linea);
+			assertTrue(sector.ObtenerLinea() instanceof Linea); //NO USAR INSTANCE OF!
 	}
 
 }

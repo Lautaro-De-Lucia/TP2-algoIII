@@ -1,10 +1,11 @@
 package sector_bloques;
 
 public class Repetir extends BloqueCompuesto {
-	
+		//FACTORY PARA ENCAPSULAR LA REPETICION 2 Y 3 Y USAR SOLO UNA CLASE "REPETIR"
+		
 		int veces = 1;
 		
-		public void setVeces(int num) {
+		public void setVeces(int num) { //MEJOR HACERLO UN PARÁMETRO EN EL CONSTRUCTOR
 			veces = num;
 		}
 		

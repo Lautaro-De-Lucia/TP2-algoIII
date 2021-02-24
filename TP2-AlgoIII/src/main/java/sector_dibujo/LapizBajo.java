@@ -2,12 +2,13 @@ package sector_dibujo;
 
 public class LapizBajo extends Lapiz {
 
-    public Linea dibujarLinea(Posicion posicion1, Posicion posicion2){
+    public void dibujarLinea(Posicion posicion1, Posicion posicion2){
 
-        Posicion coordenadaInicial = new Posicion(posicion1);
-        Posicion coordenadaFinal = new Posicion(posicion2);
+        Posicion coordenada1 = new Posicion(posicion1);
+        Posicion coordenada2 = new Posicion(posicion2);
 
-        return (new Linea(coordenadaInicial, coordenadaFinal));
+        SectorDibujo tablero = SectorDibujo.obtenerInstancia();
+        tablero.agregarLinea(new LineaSolida(coordenada1, coordenada2,this.colorLapiz));
 
     }
 

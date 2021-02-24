@@ -43,7 +43,7 @@ public class Posicion {
 		this.coordY = this.coordY + direccionNueva.obtenerLatitud();
 	}
 	
-	public boolean igual(Posicion otraPosicion) {
+	public boolean igualA(Posicion otraPosicion) {
 		if((this.coordX == otraPosicion.obtenerCoordX()) && (this.coordY == otraPosicion.obtenerCoordY()))
 			return true;
 		return false;
