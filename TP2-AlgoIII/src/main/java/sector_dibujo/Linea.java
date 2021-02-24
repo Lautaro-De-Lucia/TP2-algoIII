@@ -10,6 +10,12 @@ public class Linea {
         this.punto1 = nuevoOrigen;
         this.punto2 = nuevoDestino;
     }
+    
+    public Linea(Linea otraLinea){
+    	this.punto1 = otraLinea.getPunto1();
+    	this.punto2 = otraLinea.getPunto2();
+    }
+
 
     public Posicion getPunto1() {return punto1;}
     public Posicion getPunto2() {return punto2;}
