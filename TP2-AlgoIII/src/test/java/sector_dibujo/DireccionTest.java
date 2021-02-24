@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class DireccionTest {
 
 	@Test
-	void test() {
+	void test01() {
 		fail("Not yet implemented");
 	}
 
