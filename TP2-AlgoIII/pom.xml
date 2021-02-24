@@ -10,19 +10,24 @@
   	<maven.compiler.source>15</maven.compiler.source>
   	<junit.jupiter-version>5.4.0</junit.jupiter-version>
   </properties>
-<dependencies>
+  
+  <dependencyManagement>
+  <dependencies>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.4.0</version>
-        <scope>test</scope>
+      <groupId>org.junit</groupId>
+      <artifactId>junit-bom</artifactId>
+      <version>5.5.2</version>
+      <type>pom</type>
+      <scope>import</scope>
     </dependency>
-        <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>5.4.0</version>
-        <scope>test</scope>
-    </dependency>
-</dependencies> 
- 
+  </dependencies>
+</dependencyManagement>
+<dependencies>
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+   
 </project>

@@ -2,44 +2,44 @@ package sector_dibujo;
 
 public class Direccion {
 	
-	private int latitud;
 	private int longitud;
+	private int latitud;
 	
 	public Direccion() {
+		this.longitud = 0;
         this.latitud = 0;
-        this.longitud = 0;
     }
 	
-	public Direccion(int newLat, int newLong) {
-        this.latitud = newLat;
+	public Direccion(int newLong, int newLat) {
         this.longitud = newLong;
+        this.latitud = newLat;
     }
-	
-	public int obtenerLatitud() {
-		return this.latitud;
-	}
 	
 	public int obtenerLongitud() {
 		return this.longitud;
 	}
 	
+	public int obtenerLatitud() {
+		return this.latitud;
+	}
+	
 	public void norte() {
-		this.latitud = 0;
-        this.longitud = 1;
+        this.longitud = 0;
+		this.latitud = 1;
 	}
 	
 	public void sur() {
-		this.latitud = 0;
-        this.longitud = -1;
+        this.longitud = 0;
+		this.latitud = -1;
 	}
 
 	public void este() {
-		this.latitud = 1;
-        this.longitud = 0;	
+        this.longitud = 1;	
+		this.latitud = 0;
 	}
 
 	public void oeste() {
-		this.latitud = -1;
-        this.longitud = 0;	
+        this.longitud = -1;
+		this.latitud = 0;
 	}
 }
