@@ -6,7 +6,7 @@ public class SectorDibujo {
     
 	private Personaje personaje;
     private ArrayList<Linea> tablero;
-    private static final int dimension = 5;
+    public static final int dimension = 5;
     
     private static SectorDibujo sectorDibujo = new SectorDibujo();
     

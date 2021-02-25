@@ -44,6 +44,11 @@ public class Personaje {
 		Posicion posicionOriginal = new Posicion(this.posicion);
 		Posicion nuevaPosicion = new Posicion(this.posicion, direccionNueva);
 		
+		int limite = SectorDibujo.dimension;
+		
+		if( (nuevaPosicion.obtenerCoordX() > limite) || (nuevaPosicion.obtenerCoordY() > limite) )
+			return;
+		
         this.posicion = nuevaPosicion;
         this.orientacion = direccionNueva;
         
