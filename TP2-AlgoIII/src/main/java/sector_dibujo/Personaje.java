@@ -19,6 +19,11 @@ public class Personaje {
 		this.lapiz = lapiz;
 	}
 	
+	public Posicion obtenerPosicion() {
+		
+		return this.posicion;
+	}
+	
 	public void levantarLapiz() {
 	 
 		this.lapiz = new LapizLevantado();
@@ -42,7 +47,7 @@ public class Personaje {
 	public void mover(Direccion direccionNueva) {
 		
 		Posicion posicionOriginal = new Posicion(this.posicion);
-		Posicion nuevaPosicion = new Posicion(this.posicion, direccionNueva);
+		Posicion nuevaPosicion = new Posicion(posicionOriginal, direccionNueva);
 		
         this.posicion = nuevaPosicion;
         this.orientacion = direccionNueva;
