@@ -27,7 +27,7 @@ public class Posicion {
 		posicionNueva.cambiar(direccionNueva);
 		
 		this.coordX = posicionNueva.obtenerCoordX();
-		this.coordX = posicionNueva.obtenerCoordY();	
+		this.coordY = posicionNueva.obtenerCoordY();	
 	}
 		
 	public int obtenerCoordX() {
