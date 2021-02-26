@@ -1,6 +1,6 @@
 package sector_dibujo;
 
-public class Linea {
+public abstract class Linea {
     Posicion punto1;
     Posicion punto2;
 
@@ -22,16 +22,22 @@ public class Linea {
     public void setPunto1(Posicion unPunto) {this.punto1 = unPunto;}
     public void setPunto2(Posicion unPunto) {this.punto2 = unPunto;}
         
-    public boolean igualA(Linea otraLinea){
+    public boolean igualA(Linea otraLinea) {
     	
-        if((this.punto1).igualA(otraLinea.getPunto1()) || (this.punto1).igualA(otraLinea.getPunto2())){
-        	if((this.punto2).igualA(otraLinea.getPunto1()) || (this.punto2).igualA(otraLinea.getPunto2())){
-                return true;
-            }
-        } 
+    	if((this.punto1).igualA(otraLinea.getPunto1()) && (this.punto2).igualA(otraLinea.getPunto2())){
+        	return true;
+        }
+        	
+        if((this.punto2).igualA(otraLinea.getPunto1()) && (this.punto1).igualA(otraLinea.getPunto2())){
+        	return true;
+        }
+        
         return false;
+        
     }
     
+    public abstract boolean esNula();
+        
 }
     
 

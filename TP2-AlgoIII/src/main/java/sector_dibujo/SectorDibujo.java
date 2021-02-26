@@ -14,7 +14,7 @@ public class SectorDibujo {
     	return sectorDibujo;
     }
 
-    public SectorDibujo( ){
+    public SectorDibujo(){
         this.personaje = new Personaje();
         this.tablero = new ArrayList<Linea>();
         //Inicializamos el tablero con lineas nulas
@@ -34,7 +34,7 @@ public class SectorDibujo {
             }
         } 
     }
-    
+    /*
     public Linea obtenerLinea (Posicion posicion1, Posicion posicion2) {
     	
     	for (int i = 0; i < this.tablero.size(); i++) {
@@ -42,15 +42,29 @@ public class SectorDibujo {
     			return this.tablero.get(i);
     		}
     	}
-    	//Si los parámetros estan fuera del rango del tablero aún debemos devolver una linea
-    	//¿Como se manejaría esto? ¿Con excepciones?
-    	//En C devolveríamos un tipo enumerativo ERROR_NOT_IN_TABLERO
-    	//¿Cómo hacemos en java si hay un error pero el método aún así exige que se devuelva una Linea?
+    	//Si los parï¿½metros estan fuera del rango del tablero aï¿½n debemos devolver una linea
+    	//ï¿½Como se manejarï¿½a esto? ï¿½Con excepciones?
+    	//En C devolverï¿½amos un tipo enumerativo ERROR_NOT_IN_TABLERO
+    	//ï¿½Cï¿½mo hacemos en java si hay un error pero el mï¿½todo aï¿½n asï¿½ exige que se devuelva una Linea?
     	return new LineaNula(new Posicion(0,0), new Posicion(0,0));
     	
     	
     }
-            	
+    */
+
+    public Linea obtenerLinea (Posicion posicion1, Posicion posicion2) {
+    	
+    	for (int i = 0; i < this.tablero.size(); i++) {
+    		if((this.tablero.get(i).getPunto1().igualA(posicion1)) && (this.tablero.get(i).getPunto2().igualA(posicion2))) {
+    			return this.tablero.get(i);
+    		}
+    	}
+    	//Si los parï¿½metros estan fuera del rango del tablero aï¿½n debemos devolver una linea
+    	//ï¿½Como se manejarï¿½a esto? ï¿½Con excepciones?
+    	//En C devolverï¿½amos un tipo enumerativo ERROR_NOT_IN_TABLERO
+    	//ï¿½Cï¿½mo hacemos en java si hay un error pero el mï¿½todo aï¿½n asï¿½ exige que se devuelva una Linea?
+    	return new LineaNula(new Posicion(0,0), new Posicion(0,0));
+    }
     
     public void abajo(){
         Direccion sur = new Direccion();
@@ -74,7 +88,7 @@ public class SectorDibujo {
         Direccion oeste = new Direccion();
         oeste.oeste();
     	personaje.mover(oeste);
-    	}
+    }
 
     public void bajarLapiz(){this.personaje.bajarLapiz();}
 

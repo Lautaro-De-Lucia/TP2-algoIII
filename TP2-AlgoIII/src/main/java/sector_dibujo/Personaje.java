@@ -51,7 +51,7 @@ public class Personaje {
 		
 		int limite = SectorDibujo.dimension;
 		
-		if( (nuevaPosicion.obtenerCoordX() > limite) || (nuevaPosicion.obtenerCoordY() > limite) )
+		if((nuevaPosicion.obtenerCoordX() > limite) || (nuevaPosicion.obtenerCoordY() > limite))
 			return;
 		
         this.posicion = nuevaPosicion;
