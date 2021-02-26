@@ -8,8 +8,7 @@ public class LapizBajo extends Lapiz {
         Posicion coordenada2 = new Posicion(posicion2);
 
         SectorDibujo tablero = SectorDibujo.obtenerInstancia();
-        tablero.agregarLinea(new LineaSolida(coordenada1, coordenada2,this.colorLapiz));
-
+        tablero.agregarLinea(new LineaSolida(coordenada1, coordenada2, this.colorLapiz));
     }
 
 }

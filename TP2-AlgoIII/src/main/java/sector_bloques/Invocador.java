@@ -6,7 +6,7 @@ public class Invocador {
 
 	ArrayList<Bloque> colaDeBloques = new ArrayList<Bloque>();
 	
-	public void agregarBLoque(Bloque bloque) {
+	public void agregarBloque(Bloque bloque) {
 		colaDeBloques.add(bloque);
 	}
 	

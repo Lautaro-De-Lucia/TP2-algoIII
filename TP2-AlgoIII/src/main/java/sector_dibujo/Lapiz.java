@@ -8,6 +8,10 @@ public abstract class Lapiz {
 		colorLapiz = nuevoColor;
 	}
 	
+	public Color obtenerColor() {
+		return colorLapiz;
+	}
+	
     public abstract void dibujarLinea(Posicion posicion1, Posicion posicion2);
     
 

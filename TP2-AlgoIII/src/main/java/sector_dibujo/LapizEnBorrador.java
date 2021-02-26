@@ -8,7 +8,6 @@ public class LapizEnBorrador extends Lapiz {
         Posicion coordenada2 = new Posicion(posicion2);
 
         SectorDibujo tablero = SectorDibujo.obtenerInstancia();
-        
         tablero.agregarLinea(new LineaNula(coordenada1, coordenada2));
 
     }
