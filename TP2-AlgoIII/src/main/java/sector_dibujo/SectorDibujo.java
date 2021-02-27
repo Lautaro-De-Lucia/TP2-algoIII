@@ -17,7 +17,11 @@ public class SectorDibujo {
     public SectorDibujo(){
         this.personaje = new Personaje();
         this.tablero = new ArrayList<Linea>();
+        
         //Inicializamos el tablero con lineas nulas
+        
+        //Lineas horizontales
+        
         for(int j = 0; j <= SectorDibujo.dimension ; j++) {
         	for (int i = 0; i < SectorDibujo.dimension; i++) {
         		Posicion posicion1 = new Posicion(i,j);
@@ -25,44 +29,38 @@ public class SectorDibujo {
         		tablero.add(new LineaNula(posicion1,posicion2));
         	}
         }
+        
+        //Lineas verticales
+        
+        for(int i = 0; i < SectorDibujo.dimension ; i++) {
+        	for (int j = 0; j <= SectorDibujo.dimension; j++) {
+        		Posicion posicion1 = new Posicion(i,j);
+        		Posicion posicion2 = new Posicion(i,j+1);
+        		tablero.add(new LineaNula(posicion1,posicion2));
+        	}
+        }
     }
 
-    public void agregarLinea(Linea nuevaLinea ){
-        for (int i = 0; i < (this.tablero).size(); i++) {  
-            if(this.tablero.get(i).igualA(nuevaLinea)) {
+    public void agregarLinea(Linea nuevaLinea){
+        for (int i = 0; i < (this.tablero).size(); i++) {
+            if(this.tablero.get(i).mismaUbicacion(nuevaLinea)) {
             	this.tablero.set(i, nuevaLinea);
+            	
             }
         } 
     }
-    /*
-    public Linea obtenerLinea (Posicion posicion1, Posicion posicion2) {
-    	
-    	for (int i = 0; i < this.tablero.size(); i++) {
-    		if(this.tablero.get(i).igualA(new Linea(posicion1,posicion2))) {
-    			return this.tablero.get(i);
-    		}
-    	}
-    	//Si los par�metros estan fuera del rango del tablero a�n debemos devolver una linea
-    	//�Como se manejar�a esto? �Con excepciones?
-    	//En C devolver�amos un tipo enumerativo ERROR_NOT_IN_TABLERO
-    	//�C�mo hacemos en java si hay un error pero el m�todo a�n as� exige que se devuelva una Linea?
-    	return new LineaNula(new Posicion(0,0), new Posicion(0,0));
-    	
-    	
-    }
-    */
 
-    public Linea obtenerLinea (Posicion posicion1, Posicion posicion2) {
+    public Linea obtenerLinea(Posicion posicion1, Posicion posicion2) {
     	
     	for (int i = 0; i < this.tablero.size(); i++) {
     		if((this.tablero.get(i).getPunto1().igualA(posicion1)) && (this.tablero.get(i).getPunto2().igualA(posicion2))) {
     			return this.tablero.get(i);
     		}
+    		if((this.tablero.get(i).getPunto1().igualA(posicion2)) && (this.tablero.get(i).getPunto2().igualA(posicion1))) {
+    			return this.tablero.get(i);
+    		}
     	}
-    	//Si los par�metros estan fuera del rango del tablero a�n debemos devolver una linea
-    	//�Como se manejar�a esto? �Con excepciones?
-    	//En C devolver�amos un tipo enumerativo ERROR_NOT_IN_TABLERO
-    	//�C�mo hacemos en java si hay un error pero el m�todo a�n as� exige que se devuelva una Linea?
+    	
     	return new LineaNula(new Posicion(0,0), new Posicion(0,0));
     }
     
