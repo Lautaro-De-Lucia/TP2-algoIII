@@ -4,30 +4,76 @@
   <artifactId>TP2-AlgoIII</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>TP2-AlgoIII</name>
-  
+
   <properties>
-  	<maven.compiler.target>15</maven.compiler.target>
-  	<maven.compiler.source>15</maven.compiler.source>
-  	<junit.jupiter-version>5.4.0</junit.jupiter-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <junit.jupiter.version>5.4.0</junit.jupiter.version>
+    <mockito-mockito-core-version>3.3.0</mockito-mockito-core-version>
+    <maven-surefire-version>3.0.0-M3</maven-surefire-version>
   </properties>
-  
-  <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.junit</groupId>
-      <artifactId>junit-bom</artifactId>
-      <version>5.5.2</version>
-      <type>pom</type>
-      <scope>import</scope>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>11.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito-mockito-core-version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
-</dependencyManagement>
-<dependencies>
-  <dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter</artifactId>
-    <scope>test</scope>
-  </dependency>
-</dependencies>
-   
+  <build>
+    <testSourceDirectory>src/test</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.1</version>
+        <configuration>
+          <mainClass>App</mainClass>
+        </configuration>
+      </plugin><plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>${maven-surefire-version}</version>
+    </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
