@@ -18,8 +18,7 @@ class LapizTest {
 		
 		assertEquals(unLapiz.obtenerColor(), nuevoColor);
 	}
-	
-	/*
+
 	@Test
 	public void test02LapizBajoDibujaUnaLinea(){
 
@@ -28,38 +27,32 @@ class LapizTest {
 		Posicion posInicial = new Posicion(1, 0);
 		Posicion posFinal = new Posicion(1, 1);
 		
-		assertFalse((tablero.obtenerLinea(posInicial, posFinal)).esSolida());
-		
 		lapiz.dibujarLinea(posInicial, posFinal);
-		
+				
 		Linea lineaDibujada = tablero.obtenerLinea(posInicial, posFinal);
+		Linea lineaReferencia = new LineaSolida(posInicial, posFinal);
 		
-		System.out.println((lineaDibujada.getPunto1()).obtenerCoordX());
-		System.out.println((lineaDibujada.getPunto1()).obtenerCoordY());
-		System.out.println((lineaDibujada.getPunto2()).obtenerCoordX());
-		System.out.println((lineaDibujada.getPunto2()).obtenerCoordY());
-						
-		assertTrue((tablero.obtenerLinea(posInicial, posFinal)).esSolida());
+		assertTrue(lineaDibujada.igualA(lineaReferencia));
 
 	}
-	*/
 	
-	
-	/*
-
 	@Test
-	public void test02LapizLevantadoNoDibujaLinea(){
+	public void test03LapizLevantadoNoDibujaLinea(){
 
 		LapizLevantado lapiz = new LapizLevantado();
 		SectorDibujo tablero = SectorDibujo.obtenerInstancia();
-		Posicion origenLinea = new Posicion(1, 0);
-		Posicion finLinea = new Posicion(1, 1);
+		Posicion posInicial = new Posicion(2, 1);
+		Posicion posFinal = new Posicion(2, 2);
 		
-		lapiz.dibujarLinea(origenLinea, finLinea);
+		lapiz.dibujarLinea(posInicial, posFinal);
+		 
+		Linea lineaDibujada = tablero.obtenerLinea(posInicial, posFinal);
+		Linea lineaReferencia = new LineaSolida(posInicial, posFinal);
+		
+		assertFalse(lineaDibujada.igualA(lineaReferencia));
+
 	}
 
 	
-	
-	*/
 	
 }

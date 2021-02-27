@@ -1,14 +1,16 @@
 package sector_dibujo;
 
 public abstract class Linea {
-    Posicion punto1;
+    
+	Posicion punto1;
     Posicion punto2;
-
+    Color color;
+    
     //REVISAR NULLOBJECT
     //QUE LINEA SEA UNA INTERFAZ Y QUE LA IMPLEMENTEN LINEA Y LINEANULA
-    public Linea(Posicion unOrigen, Posicion unDestino){
-        this.punto1 = unOrigen;
-        this.punto2 = unDestino;
+    public Linea(Posicion unPunto, Posicion otroPunto){
+        this.punto1 = unPunto;
+        this.punto2 = otroPunto;
     }
     
     public Linea(Linea otraLinea){
@@ -21,23 +23,39 @@ public abstract class Linea {
     
     public void setPunto1(Posicion unPunto) {this.punto1 = unPunto;}
     public void setPunto2(Posicion unPunto) {this.punto2 = unPunto;}
-        
+
+    
     public boolean igualA(Linea otraLinea) {
     	
-    	if((this.punto1).igualA(otraLinea.getPunto1()) && (this.punto2).igualA(otraLinea.getPunto2())){
-        	return true;
-        }
-        	
-        if((this.punto2).igualA(otraLinea.getPunto1()) && (this.punto1).igualA(otraLinea.getPunto2())){
-        	return true;
-        }
-        
-        return false;
-        
+    	if(this.color == otraLinea.getColor()) {
+    		
+    		if((this.punto1).igualA(otraLinea.getPunto1()) && (this.punto2).igualA(otraLinea.getPunto2())){
+    	    	return true;
+    	    }
+    	    	
+    	    if((this.punto2).igualA(otraLinea.getPunto1()) && (this.punto1).igualA(otraLinea.getPunto2())){
+    	    	return true;
+    	    }
+    	}
+	    	
+	    return false;
     }
     
-    public abstract boolean esNula();
-        
+    public boolean mismaUbicacion(Linea otraLinea){
+    	    	
+		if((this.punto1).igualA(otraLinea.getPunto1()) && (this.punto2).igualA(otraLinea.getPunto2())){
+	    	return true;
+	    }
+	    	
+	    if((this.punto2).igualA(otraLinea.getPunto1()) && (this.punto1).igualA(otraLinea.getPunto2())){
+	    	return true;
+	    }
+	    
+	    return false;
+	}
+    
+    public abstract Color getColor();
+    
 }
     
 
