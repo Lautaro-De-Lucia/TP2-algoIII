@@ -5,7 +5,7 @@ public class BloqueCompuesto extends Bloque {
 	
 	ArrayList<Bloque> bloques = new ArrayList<Bloque>();
 	
-	public void agregarBLoque(Bloque bloque) {
+	public void agregarBloque(Bloque bloque) {
 		bloques.add(bloque);
 	}
 	

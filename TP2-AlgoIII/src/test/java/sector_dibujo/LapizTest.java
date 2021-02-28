@@ -24,8 +24,8 @@ class LapizTest {
 
 		LapizBajo lapiz = new LapizBajo();
 		SectorDibujo tablero = SectorDibujo.obtenerInstancia();
-		Posicion posInicial = new Posicion(1, 0);
-		Posicion posFinal = new Posicion(1, 1);
+		Posicion posInicial = new Posicion(8, 7);
+		Posicion posFinal = new Posicion(8, 8);
 		
 		lapiz.dibujarLinea(posInicial, posFinal);
 				
@@ -37,12 +37,12 @@ class LapizTest {
 	}
 	
 	@Test
-	public void test03LapizLevantadoNoDibujaLinea(){
+	public void test03LapizEnBorradorNoDibujaLinea(){
 
-		LapizLevantado lapiz = new LapizLevantado();
+		LapizEnBorrador lapiz = new LapizEnBorrador();
 		SectorDibujo tablero = SectorDibujo.obtenerInstancia();
-		Posicion posInicial = new Posicion(2, 1);
-		Posicion posFinal = new Posicion(2, 2);
+		Posicion posInicial = new Posicion(9, 8);
+		Posicion posFinal = new Posicion(9, 9);
 		
 		lapiz.dibujarLinea(posInicial, posFinal);
 		 

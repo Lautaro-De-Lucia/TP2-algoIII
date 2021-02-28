@@ -9,8 +9,8 @@ class LineaTest {
 	@Test
 	public void test01LineaConstruidaPorParametrosCambiaSusAtributos(){
 		
-		Posicion posInicial =  new Posicion(1,1);
-		Posicion posFinal =  new Posicion(1,2);
+		Posicion posInicial =  new Posicion(8,8);
+		Posicion posFinal =  new Posicion(8,9);
 		LineaSolida unaLinea = new LineaSolida(posInicial, posFinal);
 		
 		assertEquals(unaLinea.getPunto1(), posInicial);
@@ -20,8 +20,8 @@ class LineaTest {
 	@Test
 	public void test02LineaConstruidaPorCopiaEsIgualAOriginal() {
 		
-		Posicion posInicial =  new Posicion(1,1);
-		Posicion posFinal =  new Posicion(1,2);
+		Posicion posInicial =  new Posicion(8,8);
+		Posicion posFinal =  new Posicion(8,9);
 		LineaSolida unaLinea = new LineaSolida(posInicial, posFinal);
 		LineaSolida otraLinea = new LineaSolida(unaLinea);
 		
@@ -31,9 +31,9 @@ class LineaTest {
 	@Test
 	public void test03ModificarLinea() {
 		
-		Posicion posInicial1 =  new Posicion(0,0);
-		Posicion posFinal =  new Posicion(0,1);
-		Posicion posInicial2 =  new Posicion(1,1);
+		Posicion posInicial1 =  new Posicion(7,7);
+		Posicion posFinal =  new Posicion(7,8);
+		Posicion posInicial2 =  new Posicion(8,8);
 		
 		LineaSolida unaLinea = new LineaSolida(posInicial1, posFinal);
 		

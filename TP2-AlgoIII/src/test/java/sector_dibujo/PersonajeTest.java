@@ -37,7 +37,7 @@ class PersonajeTest {
 		
 		// verificacion de posicion inicial
 		
-		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(0, 0)));
+		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(7, 7)));
 		
 	}
 	
@@ -50,11 +50,11 @@ class PersonajeTest {
 
 		// mover hacia el norte
 		
-		personaje.mover(norte); // (0, 1)
+		personaje.mover(norte); // (7, 8)
 		
 		// assertion
 				
-		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(0, 1)));
+		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(7, 8)));
 		
 	}
 	
@@ -67,35 +67,35 @@ class PersonajeTest {
 		
 		// mover hacia el norte
 		
-		personaje.mover(norte); // (0, 1)
+		personaje.mover(norte); // (7, 8)
 		
 		// assertion
 		
-		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(0, 1)));
+		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(7, 8)));
 		
 		// mover hacia el este
 		
-		personaje.mover(este); // (1, 1)
+		personaje.mover(este); // (8, 8)
 				
 		// assertion
 				
-		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(1, 1)));
+		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(8, 8)));
 		
 		// mover hacia el sur
 		
-		personaje.mover(sur); // (1, 0)
+		personaje.mover(sur); // (8, 7)
 				
 		// assertion
 				
-		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(1, 0)));
+		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(8, 7)));
 		
 		// mover hacia el oeste
 		
-		personaje.mover(oeste); // (0, 0)
+		personaje.mover(oeste); // (7, 7)
 				
 		// assertion
 				
-		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(0, 0)));
+		assertTrue((personaje.obtenerPosicion()).igualA(new Posicion(7, 7)));
 		
 	}
 
