@@ -18,7 +18,9 @@ public class ContenedorPrincipal extends BorderPane{
     VistaTablero tablero = new VistaTablero(512,512);
     AreaBloques pg = new AreaBloques(256,712,invocador);
 
+
     public ContenedorPrincipal(Stage primaryStage) {
+        invocador.addObserver(pg);
         VBox bloquesMov = new VBox();
         Label labelMov = new Label("Bloques Movimiento");
 

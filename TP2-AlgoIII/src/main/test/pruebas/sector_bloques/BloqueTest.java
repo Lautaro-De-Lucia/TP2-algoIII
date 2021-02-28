@@ -1,4 +1,4 @@
-package java.sector_bloques;
+package pruebas.sector_bloques;
 
 import static org.junit.jupiter.api.Assertions.*;
 
