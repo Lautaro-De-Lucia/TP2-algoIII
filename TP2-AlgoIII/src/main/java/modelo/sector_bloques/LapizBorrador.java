@@ -1,4 +1,4 @@
-package sector_bloques;
+package modelo.sector_bloques;
 
 public class LapizBorrador extends Bloque{
 

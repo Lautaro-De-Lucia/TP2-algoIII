@@ -1,11 +1,13 @@
-package sector_bloques;
+package java.sector_bloques;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import modelo.sector_bloques.*;
+import modelo.sector_bloques.Invocador;
 import org.junit.jupiter.api.Test;
 
-import sector_dibujo.Posicion;
-import sector_dibujo.SectorDibujo;
+import modelo.sector_dibujo.Posicion;
+import modelo.sector_dibujo.SectorDibujo;
 
 import org.junit.jupiter.api.BeforeEach;
 

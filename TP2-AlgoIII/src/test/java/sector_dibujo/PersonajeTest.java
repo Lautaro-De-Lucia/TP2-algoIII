@@ -1,13 +1,16 @@
-package sector_dibujo;
+package java.sector_dibujo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import modelo.sector_dibujo.Direccion;
+import modelo.sector_dibujo.Personaje;
+import modelo.sector_dibujo.Posicion;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class PersonajeTest {
 	
-	Direccion norte; 
+	Direccion norte;
 	Direccion sur;
 	Direccion este;
 	Direccion oeste;

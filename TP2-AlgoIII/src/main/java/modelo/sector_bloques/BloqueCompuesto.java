@@ -1,4 +1,4 @@
-package sector_bloques;
+package modelo.sector_bloques;
 import java.util.ArrayList;
 
 public class BloqueCompuesto extends Bloque {

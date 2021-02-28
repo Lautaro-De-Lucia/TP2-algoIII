@@ -1,7 +1,11 @@
-package sector_dibujo;
+package java.sector_dibujo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import modelo.sector_dibujo.Linea;
+import modelo.sector_dibujo.LineaSolida;
+import modelo.sector_dibujo.Posicion;
+import modelo.sector_dibujo.SectorDibujo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 

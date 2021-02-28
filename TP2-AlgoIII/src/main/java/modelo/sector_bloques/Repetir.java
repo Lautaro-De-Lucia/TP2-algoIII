@@ -1,4 +1,4 @@
-package sector_bloques;
+package modelo.sector_bloques;
 
 public class Repetir extends BloqueCompuesto {
 		//FACTORY PARA ENCAPSULAR LA REPETICION 2 Y 3 Y USAR SOLO UNA CLASE "REPETIR"

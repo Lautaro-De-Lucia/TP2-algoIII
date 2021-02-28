@@ -1,5 +1,5 @@
-package sector_bloques;
-import sector_dibujo.SectorDibujo;
+package modelo.sector_bloques;
+import modelo.sector_dibujo.SectorDibujo;
 
 public class Bloque {
 	

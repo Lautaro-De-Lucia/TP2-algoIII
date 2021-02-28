@@ -1,7 +1,7 @@
 package controller;
 
-import sector_bloques.Bloque;
-import sector_bloques.Invocador;
+import modelo.sector_bloques.Bloque;
+import modelo.sector_bloques.Invocador;
 
 public class InvocadorControl{
 

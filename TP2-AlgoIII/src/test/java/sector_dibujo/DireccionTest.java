@@ -1,7 +1,8 @@
-package sector_dibujo;
+package java.sector_dibujo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import modelo.sector_dibujo.Direccion;
 import org.junit.jupiter.api.Test;
 
 class DireccionTest {

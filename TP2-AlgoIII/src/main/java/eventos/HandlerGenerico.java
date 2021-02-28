@@ -20,10 +20,4 @@ public class HandlerGenerico implements EventHandler<ActionEvent> {
         area.agregarBloque("BLOQUE TEST");
     }
 
-    /*
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        System.out.println("Generico Handler");
-    }
-     */
 }
