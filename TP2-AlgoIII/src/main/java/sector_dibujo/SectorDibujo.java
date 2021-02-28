@@ -6,7 +6,7 @@ public class SectorDibujo {
     
 	private Personaje personaje;
     private ArrayList<Linea> tablero;
-    public static final int dimension = 5;
+    public static final int dimension = 15; // posicion inicial de personaje = (7, 7)
     
     private static SectorDibujo sectorDibujo = new SectorDibujo();
     
@@ -64,6 +64,10 @@ public class SectorDibujo {
     	return new LineaNula(new Posicion(0,0), new Posicion(0,0));
     }
     
+    public Personaje obtenerPersonaje() {
+    	return this.personaje;
+    }
+    
     public void abajo(){
         Direccion sur = new Direccion();
         sur.sur();
@@ -93,5 +97,30 @@ public class SectorDibujo {
     public void levantarLapiz(){this.personaje.levantarLapiz();}
 
     public void ponerBorrador(){this.personaje.ponerLapizEnBorrador();}
+    
+    public void reiniciarTablero() {
+    	
+    	this.personaje = new Personaje();
+    	
+    	//Lineas horizontales
+        
+        for(int j = 0; j <= SectorDibujo.dimension ; j++) {
+        	for (int i = 0; i < SectorDibujo.dimension; i++) {
+        		Posicion posicion1 = new Posicion(i,j);
+        		Posicion posicion2 = new Posicion(i+1,j);
+        		tablero.add(new LineaNula(posicion1,posicion2));
+        	}
+        }
+        
+        //Lineas verticales
+        
+        for(int i = 0; i < SectorDibujo.dimension ; i++) {
+        	for (int j = 0; j <= SectorDibujo.dimension; j++) {
+        		Posicion posicion1 = new Posicion(i,j);
+        		Posicion posicion2 = new Posicion(i,j+1);
+        		tablero.add(new LineaNula(posicion1,posicion2));
+        	}
+        }
+    }
     
 }

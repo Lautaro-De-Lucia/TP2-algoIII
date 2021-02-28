@@ -9,7 +9,7 @@ public class Personaje {
 	public Personaje() {
 		this.orientacion = new Direccion();
 		this.orientacion.sur();
-		this.posicion = new Posicion(0, 0);
+		this.posicion = new Posicion(7, 7); // dimension del tablero = 15x15
 		this.lapiz = new LapizBajo();
 	}
 	

@@ -3,11 +3,7 @@ import sector_dibujo.SectorDibujo;
 
 public class Bloque {
 	
-	SectorDibujo receptor = new SectorDibujo();
-
-	public void establecerReceptor(SectorDibujo tablero) {
-		receptor = tablero;
-	}
+	SectorDibujo receptor = SectorDibujo.obtenerInstancia();
 	
 	public void ejecutar() {}
 	public void ejecutarOpuesto() {}
