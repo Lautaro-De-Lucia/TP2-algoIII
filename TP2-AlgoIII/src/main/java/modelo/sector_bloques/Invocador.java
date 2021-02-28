@@ -28,8 +28,13 @@ public class Invocador implements Observable {
 	     for (Bloque bloque : colaDeBloques) {bloque.ejecutarOpuesto();}
 	}
 
+	public void limpiarSecuencia(){
+		colaDeBloques = new ArrayList<Bloque>();
+		avisarObservadores();
+	}
 
-	public ArrayList<Bloque> obtenerLista(){
+
+	public ArrayList<Bloque> obtenerSecuencia(){
 		return colaDeBloques;
 	}
 

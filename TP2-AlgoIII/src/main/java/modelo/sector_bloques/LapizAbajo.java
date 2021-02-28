@@ -1,6 +1,7 @@
 package modelo.sector_bloques;
 
 public class LapizAbajo extends Bloque {
+	String nombre = "Lapiz Abajo";
 	
 	public void ejecutar() {
 		receptor.bajarLapiz();
@@ -9,4 +10,8 @@ public class LapizAbajo extends Bloque {
 		receptor.levantarLapiz();
 	}
 
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
 }

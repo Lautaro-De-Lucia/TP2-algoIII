@@ -68,9 +68,9 @@ public class AreaBloques extends Group implements Observador {
         this.getChildren().remove(this.capa);
         this.capa = nuevaCapa(this.anchoCapa,this.altoCapa);
         this.getChildren().add(this.capa);
-        ArrayList<Bloque> bloquesActuales = this.invocador.obtenerLista();
+        ArrayList<Bloque> bloquesActuales = this.invocador.obtenerSecuencia();
         for (int counter = 0; counter < bloquesActuales.size(); counter++) {
-            this.agregarBloque(Integer.toString(counter));
+            this.agregarBloque(bloquesActuales.get(counter).getNombre());
         }
     }
 }

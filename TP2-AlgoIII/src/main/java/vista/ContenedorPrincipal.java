@@ -58,6 +58,7 @@ public class ContenedorPrincipal extends BorderPane{
         sectorAlgoritmo.getChildren().add(labelBloques);
         sectorAlgoritmo.getChildren().add(pg);
         sectorAlgoritmo.getChildren().add(new BotonEjecutar(invocadorControl));
+        sectorAlgoritmo.getChildren().add(new BotonLimpiar(invocadorControl));
 
         this.setLeft(sectorDibujo);
         this.setCenter(sectorAlgoritmo);

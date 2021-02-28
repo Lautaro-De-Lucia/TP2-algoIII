@@ -1,7 +1,8 @@
 package modelo.sector_bloques;
 
 public class Arriba extends Bloque {
-	
+	String nombre = "Arriba";
+
 	public void ejecutar() {
 		receptor.arriba();
 	}
@@ -9,4 +10,8 @@ public class Arriba extends Bloque {
 		receptor.abajo();
 	}
 
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
 }

@@ -18,4 +18,8 @@ public class InvocadorControl{
     public void ejecutar(){
         this.invocador.ejecutarSecuencia();
     }
+
+    public void limpiar() {
+        this.invocador.limpiarSecuencia();
+    }
 }

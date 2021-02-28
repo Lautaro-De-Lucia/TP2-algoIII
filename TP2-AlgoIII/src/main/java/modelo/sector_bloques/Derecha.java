@@ -1,7 +1,8 @@
 package modelo.sector_bloques;
 
 public class Derecha extends Bloque {
-	
+	String nombre = "Derecha";
+
 	public void ejecutar() {
 		receptor.derecha();
 	}
@@ -9,4 +10,8 @@ public class Derecha extends Bloque {
 		receptor.izquierda();
 	}
 
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
 }
