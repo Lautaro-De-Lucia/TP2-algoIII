@@ -52,6 +52,7 @@ public class ContenedorPrincipal extends BorderPane{
         Label labelPersonaje = new Label("Area Personaje");
         sectorDibujo.getChildren().add(labelPersonaje);
         sectorDibujo.getChildren().add(tablero);
+        sectorDibujo.getChildren().add(new BotonLimpiarTablero(tablero));
 
         VBox sectorAlgoritmo = new VBox();
         Label labelBloques = new Label("Area Algoritmo");

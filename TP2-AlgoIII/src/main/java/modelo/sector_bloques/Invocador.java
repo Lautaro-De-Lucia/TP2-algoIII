@@ -1,13 +1,14 @@
 package modelo.sector_bloques;
 import modelo.Observable;
 import modelo.Observador;
+import modelo.sector_dibujo.SectorDibujo;
 
 import java.util.*;
 
 
 public class Invocador implements Observable {
 
-
+	SectorDibujo sectorDibujo = SectorDibujo.obtenerInstancia();
 	ArrayList<Bloque> colaDeBloques = new ArrayList<Bloque>();
 	private ArrayList<Observador> observadores;
 
@@ -21,7 +22,8 @@ public class Invocador implements Observable {
 	}
 	
 	public void ejecutarSecuencia() {
-	     for (Bloque bloque : colaDeBloques) {bloque.ejecutar();}
+	    sectorDibujo.reiniciarTablero();
+		for (Bloque bloque : colaDeBloques) {bloque.ejecutar();}
 	}
 	
 	public void revertirSecuencia() {
