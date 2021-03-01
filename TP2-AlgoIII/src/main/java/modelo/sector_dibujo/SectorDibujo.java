@@ -1,12 +1,16 @@
 package modelo.sector_dibujo;
+import modelo.Observable;
+import modelo.Observador;
+
 import java.util.*;
 
 
-public class SectorDibujo {
+public class SectorDibujo implements Observable {
     
 	private Personaje personaje;
     private ArrayList<Linea> tablero;
-    public static final int dimension = 15; // posicion inicial de personaje = (7, 7)
+    public static final int dimension = 16; // posicion inicial de personaje = (8, 8)
+    private ArrayList<Observador> observadores;
     
     private static SectorDibujo sectorDibujo = new SectorDibujo();
     
@@ -14,9 +18,16 @@ public class SectorDibujo {
     	return sectorDibujo;
     }
 
+    @Override
+    public void addObserver(Observador observador) {
+        observadores.add(observador);
+    }
+
+
     public SectorDibujo(){
         this.personaje = new Personaje();
         this.tablero = new ArrayList<Linea>();
+        this.observadores = new ArrayList<Observador>();
         
         //Inicializamos el tablero con lineas nulas
         
@@ -72,24 +83,28 @@ public class SectorDibujo {
         Direccion sur = new Direccion();
         sur.sur();
     	personaje.mover(sur);
+        avisarObservadores();
     }
 
     public void arriba(){
         Direccion norte = new Direccion();
         norte.norte();
     	personaje.mover(norte);
+        avisarObservadores();
     }
 
     public void derecha(){
         Direccion este = new Direccion();
         este.este();
     	personaje.mover(este);
+        avisarObservadores();
     }
 
     public void izquierda(){
         Direccion oeste = new Direccion();
         oeste.oeste();
     	personaje.mover(oeste);
+        avisarObservadores();
     }
 
     public void bajarLapiz(){this.personaje.bajarLapiz();}
@@ -121,6 +136,12 @@ public class SectorDibujo {
         		tablero.add(new LineaNula(posicion1,posicion2));
         	}
         }
+    }
+
+
+    @Override
+    public void avisarObservadores() {
+        observadores.stream().forEach(observer -> observer.refrescar());
     }
     
 }
