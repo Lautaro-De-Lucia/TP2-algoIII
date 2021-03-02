@@ -138,6 +138,9 @@ public class SectorDibujo implements Observable {
         }
     }
 
+    public int getDimension(){
+        return dimension;
+    }
 
     @Override
     public void avisarObservadores() {
