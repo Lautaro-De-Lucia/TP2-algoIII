@@ -1,7 +1,5 @@
 package vista;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -10,35 +8,33 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 
 import controller.InvocadorControl;
-import sector_dibujo.SectorDibujo;
-import vista.ContenedorBienvenidos;
-import vista.ContenedorPrincipal;
-import sector_bloques.Invocador;
-import vista.VistaTablero;
+import modelo.sector_bloques.Invocador;
 import vista.AreaBloques;
 
 public class ContenedorPrincipal extends BorderPane{
 
     Invocador invocador = new Invocador();
     InvocadorControl invocadorControl = new InvocadorControl(invocador);
-    VistaTablero tablero = new VistaTablero(512,512);
-    AreaBloques pg = new AreaBloques(256,712);
+    VistaTablero tablero = new VistaTablero(800,800);
+    AreaBloques pg = new AreaBloques(256,712,invocador);
+
 
     public ContenedorPrincipal(Stage primaryStage) {
+        invocador.addObserver(pg);
         VBox bloquesMov = new VBox();
         Label labelMov = new Label("Bloques Movimiento");
 
         bloquesMov.getChildren().add(labelMov);
-        bloquesMov.getChildren().add(new BotonArriba());
+        bloquesMov.getChildren().add(new BotonArriba(invocadorControl));
         bloquesMov.getChildren().add(new BotonAbajo(invocadorControl));
-        bloquesMov.getChildren().add(new BotonDerecha(tablero));
-        bloquesMov.getChildren().add(new BotonIzquierda());
+        bloquesMov.getChildren().add(new BotonDerecha(invocadorControl));
+        bloquesMov.getChildren().add(new BotonIzquierda(invocadorControl));
 
         VBox bloquesLapiz= new VBox();
         Label labelLapiz = new Label("Bloques Lapiz");
         bloquesLapiz.getChildren().add(labelLapiz);
-        bloquesLapiz.getChildren().add(new BotonGenerico(tablero, pg));
-        bloquesLapiz.getChildren().add(new BotonGenerico(tablero, pg));
+        bloquesLapiz.getChildren().add(new BotonLapizAbajo(invocadorControl));
+        bloquesLapiz.getChildren().add(new BotonLapizArriba(invocadorControl));
 
         VBox bloquesCompuestos = new VBox();
         Label labelCompuestos = new Label("Bloques Compuestos");
@@ -56,12 +52,14 @@ public class ContenedorPrincipal extends BorderPane{
         Label labelPersonaje = new Label("Area Personaje");
         sectorDibujo.getChildren().add(labelPersonaje);
         sectorDibujo.getChildren().add(tablero);
+        sectorDibujo.getChildren().add(new BotonLimpiarTablero(tablero));
 
         VBox sectorAlgoritmo = new VBox();
         Label labelBloques = new Label("Area Algoritmo");
         sectorAlgoritmo.getChildren().add(labelBloques);
         sectorAlgoritmo.getChildren().add(pg);
         sectorAlgoritmo.getChildren().add(new BotonEjecutar(invocadorControl));
+        sectorAlgoritmo.getChildren().add(new BotonLimpiar(invocadorControl));
 
         this.setLeft(sectorDibujo);
         this.setCenter(sectorAlgoritmo);

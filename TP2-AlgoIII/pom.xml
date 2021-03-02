@@ -3,7 +3,7 @@
   <groupId>2020-2c-t16-pm</groupId>
   <artifactId>TP2-AlgoIII</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>TP2-AlgoIII</name>
+  <!--<name>TP2-AlgoIII</name>-->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,7 +33,7 @@
     </dependency>
   </dependencies>
   <build>
-    <testSourceDirectory>src/test</testSourceDirectory>
+    <testSourceDirectory>src/main/test</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

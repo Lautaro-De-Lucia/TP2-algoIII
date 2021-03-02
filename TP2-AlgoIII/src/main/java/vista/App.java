@@ -3,16 +3,8 @@ package vista;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 
-import sector_dibujo.SectorDibujo;
-import vista.ContenedorBienvenidos;
-import vista.ContenedorPrincipal;
-import sector_bloques.Invocador;
+import modelo.sector_dibujo.SectorDibujo;
 
 public class App extends Application {
 
