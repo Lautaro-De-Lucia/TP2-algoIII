@@ -23,8 +23,8 @@ class SectorDibujoTest {
 	@Test
 	void test01SeAgregaLineaATablero(){
 	
-		Posicion posInicial = new Posicion(9, 8);
-		Posicion posFinal = new Posicion(9, 9);
+		Posicion posInicial = new Posicion(10, 9);
+		Posicion posFinal = new Posicion(10, 10);
 		LineaSolida unaLinea = new LineaSolida(posInicial, posFinal);
 		
 		tablero.agregarLinea(unaLinea);
@@ -37,8 +37,8 @@ class SectorDibujoTest {
 	@Test
 	void test02SeMueveAlPersonajeConElLapizBajo(){
 	
-		Posicion posInicial = new Posicion(7, 9);
-		Posicion posFinal = new Posicion(7, 10);
+		Posicion posInicial = new Posicion(8, 10);
+		Posicion posFinal = new Posicion(8, 11);
 		
 		tablero.bajarLapiz();
 		tablero.arriba();
@@ -55,8 +55,8 @@ class SectorDibujoTest {
 	@Test
 	void test03PersonajeConBorradorEliminaLineaDeTablero(){
 	
-		Posicion posInicial = new Posicion(7, 7);
-		Posicion posFinal = new Posicion(7, 8);
+		Posicion posInicial = new Posicion(8, 8);
+		Posicion posFinal = new Posicion(8, 9);
 		
 		LineaSolida lineaReferencia = new LineaSolida(posInicial, posFinal);
 		tablero.agregarLinea(lineaReferencia);

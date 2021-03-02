@@ -28,13 +28,13 @@ class InvocadorTest {
 		
 		Invocador invocador = new Invocador();
 				
-		invocador.agregarBloque(new Derecha()); // (8, 7)
-		invocador.agregarBloque(new Arriba()); // (8, 8)
 		invocador.agregarBloque(new Derecha()); // (9, 8)
-		invocador.agregarBloque(new Izquierda()); // (8, 8)
+		invocador.agregarBloque(new Arriba()); // (9, 9)
+		invocador.agregarBloque(new Derecha()); // (10, 9)
+		invocador.agregarBloque(new Izquierda()); // (9, 9)
 		
-		Posicion posicionOriginal = new Posicion(7, 7);
-		Posicion posicionFinal = new Posicion(8, 8);
+		Posicion posicionOriginal = new Posicion(8, 8);
+		Posicion posicionFinal = new Posicion(9, 9);
 		
 		assertTrue(posicionOriginal.igualA(tablero.obtenerPersonaje().obtenerPosicion()));
 
@@ -49,13 +49,13 @@ class InvocadorTest {
 		
 		Invocador invocador = new Invocador();
 				
-		invocador.agregarBloque(new Izquierda()); // (8, 7)
-		invocador.agregarBloque(new Abajo()); // (8, 8)
 		invocador.agregarBloque(new Izquierda()); // (9, 8)
-		invocador.agregarBloque(new Derecha()); // (8, 8)
+		invocador.agregarBloque(new Abajo()); // (9, 9)
+		invocador.agregarBloque(new Izquierda()); // (10, 9)
+		invocador.agregarBloque(new Derecha()); // (9, 9)
 		
-		Posicion posicionOriginal = new Posicion(7, 7);
-		Posicion posicionFinal = new Posicion(8, 8);
+		Posicion posicionOriginal = new Posicion(8, 8);
+		Posicion posicionFinal = new Posicion(9, 9);
 		
 		assertTrue(posicionOriginal.igualA(tablero.obtenerPersonaje().obtenerPosicion()));
 

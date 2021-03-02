@@ -29,7 +29,7 @@ class BloqueTest {
 	void test01BloqueArribaFunciona() {
 		
 		Bloque bloqueArriba = new Arriba();
-		Posicion posicionFinal = new Posicion(7, 8);
+		Posicion posicionFinal = new Posicion(8, 9);
 		
 		bloqueArriba.ejecutar();
 		
@@ -40,7 +40,7 @@ class BloqueTest {
 	void test02BloqueDerechaFunciona() {
 		
 		Bloque bloqueDerecha = new Derecha();
-		Posicion posicionFinal = new Posicion(8, 7);
+		Posicion posicionFinal = new Posicion(9, 8);
 		
 		bloqueDerecha.ejecutar();
 		
@@ -51,7 +51,7 @@ class BloqueTest {
 	void test03BloqueAbajoFunciona() {
 		
 		Bloque bloqueAbajo = new Abajo();
-		Posicion posicionFinal = new Posicion(7, 6);
+		Posicion posicionFinal = new Posicion(8, 7);
 		
 		bloqueAbajo.ejecutar();
 		
@@ -62,7 +62,7 @@ class BloqueTest {
 	void test04BloqueIzquierdaFunciona() {
 		
 		Bloque bloqueIzquierda = new Izquierda();
-		Posicion posicionFinal = new Posicion(6, 7);
+		Posicion posicionFinal = new Posicion(7, 8);
 		
 		bloqueIzquierda.ejecutar();
 		
@@ -73,8 +73,8 @@ class BloqueTest {
 	void test05BloqueLapizArribaFunciona() {
 		
 		Bloque bloqueLapizArriba = new LapizArriba();
-		Posicion posInicial = new Posicion(7, 7);
-		Posicion posFinal = new Posicion(6, 7);
+		Posicion posInicial = new Posicion(8, 8);
+		Posicion posFinal = new Posicion(7, 8);
 		Direccion oeste = new Direccion();
 		oeste.oeste();
 		Linea lineaReferencia = new LineaSolida(posInicial, posFinal);
@@ -89,7 +89,7 @@ class BloqueTest {
 	void test06BloqueLapizAbajoFunciona() {
 		
 		Bloque bloqueLapizAbajo = new LapizAbajo();
-		Posicion posInicial = new Posicion(7, 7);
+		Posicion posInicial = new Posicion(8, 8);
 		Posicion posFinal = new Posicion(7, 8);
 		Direccion norte = new Direccion();
 		norte.norte();
@@ -105,13 +105,13 @@ class BloqueTest {
 	void test07BloqueCompuestoFunciona() {
 		
 		BloqueCompuesto bloqueCompuesto = new BloqueCompuesto();
-		Posicion posicionFinal = new Posicion(9, 8);
+		Posicion posicionFinal = new Posicion(10, 9);
 		
-		bloqueCompuesto.agregarBloque(new Derecha()); // (8, 7)
-		bloqueCompuesto.agregarBloque(new Arriba()); // (8, 8)
 		bloqueCompuesto.agregarBloque(new Derecha()); // (9, 8)
-		bloqueCompuesto.agregarBloque(new Izquierda()); // (8, 8)
-		bloqueCompuesto.quitarBloque(); // (9, 8)
+		bloqueCompuesto.agregarBloque(new Arriba()); // (9, 9)
+		bloqueCompuesto.agregarBloque(new Derecha()); // (10, 9)
+		bloqueCompuesto.agregarBloque(new Izquierda()); // (9, 9)
+		bloqueCompuesto.quitarBloque(); // (10, 9)
 
 		bloqueCompuesto.ejecutar();
 		
