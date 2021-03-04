@@ -35,6 +35,10 @@ public class Invocador implements Observable {
 		avisarObservadores();
 	}
 
+	public void quitarBloque() {
+		colaDeBloques.remove((colaDeBloques.size()-1));
+		avisarObservadores();
+	}
 
 	public ArrayList<Bloque> obtenerSecuencia(){
 		return colaDeBloques;

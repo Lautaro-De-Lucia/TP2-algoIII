@@ -5,17 +5,17 @@ import controller.InvocadorControl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class HandlerLimpiar implements EventHandler<ActionEvent> {
+public class HandlerBorrarUltimo implements EventHandler<ActionEvent> {
 
     private Controlador controlador;
 
-    public HandlerLimpiar(Controlador controlador) {
+    public HandlerBorrarUltimo(Controlador controlador) {
         this.controlador = controlador;
     }
 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.controlador.limpiar();
+        this.controlador.quitarBloque();
     }
 }

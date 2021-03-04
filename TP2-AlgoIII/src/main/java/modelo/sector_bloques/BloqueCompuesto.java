@@ -30,13 +30,15 @@ public class BloqueCompuesto extends Bloque implements Observable {
 	//Remueve el ultimo bloque que se agregó
 	public void quitarBloque() {
 		bloques.remove((bloques.size()-1));
+		avisarObservadores();
 	}
 
 	//Remueve todos los bloques
 	public void limpiarBloques() {
 		bloques.clear();
-
+		avisarObservadores();
 	}
+
 	@Override
 	public String getNombre() {
 		return nombre;

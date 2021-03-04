@@ -27,6 +27,11 @@ public class CompuestosControl implements Controlador {
         return bloque.obtenerSecuencia();
     }
 
+    @Override
+    public void quitarBloque() {
+        bloque.quitarBloque();
+    }
+
     public void limpiar() {
         this.bloque.limpiarBloques();
     }

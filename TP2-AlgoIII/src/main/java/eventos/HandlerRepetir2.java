@@ -25,7 +25,7 @@ public class HandlerRepetir2 implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         BloqueCompuesto invertir = new Repetir(2);
         ContenedorAux ventanaAux = new ContenedorAux(invocador, invC, invertir);
-        Scene escenaAux = new Scene(ventanaAux, 600,800);
+        Scene escenaAux = new Scene(ventanaAux, 600,850);
         stage.setScene(escenaAux);
         stage.show();
     }
