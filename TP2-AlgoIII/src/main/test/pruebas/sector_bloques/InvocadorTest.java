@@ -12,19 +12,19 @@ import modelo.sector_dibujo.SectorDibujo;
 import org.junit.jupiter.api.BeforeEach;
 
 
-class InvocadorTest {
+public class InvocadorTest {
 	
 	SectorDibujo tablero;
 	
 	@BeforeEach
-	void setup() {
+	public void setup() {
 		
 		tablero = SectorDibujo.obtenerInstancia();
 		tablero.reiniciarTablero();
 	}
 	
 	@Test
-	void test01SecuenciaDeBloquesSeEjecutaCorrectamente() {
+	public void test01SecuenciaDeBloquesSeEjecutaCorrectamente() {
 		
 		Invocador invocador = new Invocador();
 				
@@ -45,7 +45,7 @@ class InvocadorTest {
 	}
 	
 	@Test
-	void test02SecuenciaInvertidaDeBloquesSeEjecutaCorrectamente() {
+	public void test02SecuenciaInvertidaDeBloquesSeEjecutaCorrectamente() {
 		
 		Invocador invocador = new Invocador();
 				

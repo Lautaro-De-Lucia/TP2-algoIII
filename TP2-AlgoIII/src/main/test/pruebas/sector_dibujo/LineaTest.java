@@ -6,7 +6,7 @@ import modelo.sector_dibujo.LineaSolida;
 import modelo.sector_dibujo.Posicion;
 import org.junit.jupiter.api.Test;
 
-class LineaTest {
+public class LineaTest {
 	
 	@Test
 	public void test01LineaConstruidaPorParametrosCambiaSusAtributos(){
