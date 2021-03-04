@@ -8,7 +8,7 @@ import modelo.sector_dibujo.Posicion;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class PersonajeTest {
+public class PersonajeTest {
 	
 	Direccion norte;
 	Direccion sur;
@@ -16,7 +16,7 @@ class PersonajeTest {
 	Direccion oeste;
 		
 	@BeforeEach
-	void setup() {
+	public void setup() {
 		
 		norte = new Direccion();
 		norte.norte();
@@ -32,7 +32,7 @@ class PersonajeTest {
 	}
 
 	@Test
-	void test01ElPersonajeIniciaEnElOrigen() {
+	public void test01ElPersonajeIniciaEnElOrigen() {
 		
 		// inicializacion de variables
 				
@@ -45,7 +45,7 @@ class PersonajeTest {
 	}
 	
 	@Test
-	void test02ElPersonajeSeMueveHaciaElNorte() {
+	public void test02ElPersonajeSeMueveHaciaElNorte() {
 		
 		// inicializacion de variables
 				
@@ -62,7 +62,7 @@ class PersonajeTest {
 	}
 	
 	@Test
-	void test03ElPersonajeSeMueveEnLasCuatroDirecciones() {
+	public void test03ElPersonajeSeMueveEnLasCuatroDirecciones() {
 		
 		// inicializacion de variables
 				

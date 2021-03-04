@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import modelo.sector_dibujo.Direccion;
 import org.junit.jupiter.api.Test;
 
-class DireccionTest {
+public class DireccionTest {
 
 	@Test
-	void test01CrearDireccionVerificarEstadoInicial() {
+	public void test01CrearDireccionVerificarEstadoInicial() {
 		
 		Direccion unaDireccion = new Direccion();
 		
@@ -18,7 +18,7 @@ class DireccionTest {
 	}
 	
 	@Test
-	void test02CrearDireccionCambiarANorteYVerificarLatYLong() {
+	public void test02CrearDireccionCambiarANorteYVerificarLatYLong() {
 		
 		Direccion unaDireccion = new Direccion();
 		unaDireccion.norte();
@@ -29,7 +29,7 @@ class DireccionTest {
 	}
 	
 	@Test
-	void test03DireccionesContrariasSeCancelan() {
+	public void test03DireccionesContrariasSeCancelan() {
 		
 		Direccion unaDireccion = new Direccion();
 		Direccion otraDireccion = new Direccion();

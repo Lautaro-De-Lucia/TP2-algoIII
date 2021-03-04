@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import modelo.sector_dibujo.*;
 import org.junit.jupiter.api.Test;
 
-class LapizTest {
+public class LapizTest {
 
 	@Test
 	public void test01CambiarColorDelLapiz(){

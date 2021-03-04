@@ -7,7 +7,7 @@ import modelo.sector_dibujo.Posicion;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-class PosicionTest {
+public class PosicionTest {
 	
 	Direccion norte;
 	Direccion sur;
@@ -15,7 +15,7 @@ class PosicionTest {
 	Direccion oeste;
 	
 	@BeforeEach
-	void setup() {
+	public void setup() {
 		
 		norte = new Direccion();
 		norte.norte();
@@ -31,7 +31,7 @@ class PosicionTest {
 	}
 	
 	@Test
-	void test01MovimientoEnLasCuatroDirecciones() {
+	public void test01MovimientoEnLasCuatroDirecciones() {
 		
 		Posicion posicion = new Posicion();
 		
@@ -73,7 +73,7 @@ class PosicionTest {
 	}
 
 	@Test
-	void test02SeCambiaLaPosicionAdecuadamente() {
+	public void test02SeCambiaLaPosicionAdecuadamente() {
 		
 		Posicion posicion = new Posicion();
 		
@@ -90,7 +90,7 @@ class PosicionTest {
 	}
 	
 	@Test
-	void test03DosCaminosDistintosQueLleganAlMismoDestino() {
+	public void test03DosCaminosDistintosQueLleganAlMismoDestino() {
 		
 		Posicion posicion1 = new Posicion();
 		Posicion posicion2 = new Posicion();

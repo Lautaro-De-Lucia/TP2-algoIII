@@ -14,19 +14,19 @@ import modelo.sector_dibujo.SectorDibujo;
 
 import org.junit.jupiter.api.BeforeEach;
 
-class BloqueTest {
+public class BloqueTest {
 	
 	SectorDibujo tablero;
 	
 	@BeforeEach
-	void setup() {
+	public void setup() {
 		
 		tablero = SectorDibujo.obtenerInstancia();
 		tablero.reiniciarTablero();
 	}
 
 	@Test
-	void test01BloqueArribaFunciona() {
+	public void test01BloqueArribaFunciona() {
 		
 		Bloque bloqueArriba = new Arriba();
 		Posicion posicionFinal = new Posicion(8, 9);
@@ -37,7 +37,7 @@ class BloqueTest {
 	}
 	
 	@Test
-	void test02BloqueDerechaFunciona() {
+	public void test02BloqueDerechaFunciona() {
 		
 		Bloque bloqueDerecha = new Derecha();
 		Posicion posicionFinal = new Posicion(9, 8);
@@ -48,7 +48,7 @@ class BloqueTest {
 	}
 	
 	@Test
-	void test03BloqueAbajoFunciona() {
+	public void test03BloqueAbajoFunciona() {
 		
 		Bloque bloqueAbajo = new Abajo();
 		Posicion posicionFinal = new Posicion(8, 7);
@@ -59,7 +59,7 @@ class BloqueTest {
 	}
 	
 	@Test
-	void test04BloqueIzquierdaFunciona() {
+	public void test04BloqueIzquierdaFunciona() {
 		
 		Bloque bloqueIzquierda = new Izquierda();
 		Posicion posicionFinal = new Posicion(7, 8);
@@ -70,7 +70,7 @@ class BloqueTest {
 	}
 	
 	@Test
-	void test05BloqueLapizArribaFunciona() {
+	public void test05BloqueLapizArribaFunciona() {
 		
 		Bloque bloqueLapizArriba = new LapizArriba();
 		Posicion posInicial = new Posicion(8, 8);
@@ -86,7 +86,7 @@ class BloqueTest {
 	}
 	
 	@Test
-	void test06BloqueLapizAbajoFunciona() {
+	public void test06BloqueLapizAbajoFunciona() {
 		
 		Bloque bloqueLapizAbajo = new LapizAbajo();
 		Posicion posInicial = new Posicion(8, 8);
@@ -102,7 +102,7 @@ class BloqueTest {
 	}
 		
 	@Test
-	void test07BloqueCompuestoFunciona() {
+	public void test07BloqueCompuestoFunciona() {
 		
 		BloqueCompuesto bloqueCompuesto = new BloqueCompuesto();
 		Posicion posicionFinal = new Posicion(10, 9);

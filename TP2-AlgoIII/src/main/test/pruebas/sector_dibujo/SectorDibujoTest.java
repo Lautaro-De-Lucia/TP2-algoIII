@@ -9,19 +9,19 @@ import modelo.sector_dibujo.SectorDibujo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-class SectorDibujoTest {
+public class SectorDibujoTest {
 
 	SectorDibujo tablero;
 	
 	@BeforeEach
-	void setup() {
+	public void setup() {
 		
 		tablero = SectorDibujo.obtenerInstancia();
 		tablero.reiniciarTablero();
 	}
 
 	@Test
-	void test01SeAgregaLineaATablero(){
+	public void test01SeAgregaLineaATablero(){
 	
 		Posicion posInicial = new Posicion(10, 9);
 		Posicion posFinal = new Posicion(10, 10);
@@ -35,7 +35,7 @@ class SectorDibujoTest {
 	}
 	
 	@Test
-	void test02SeMueveAlPersonajeConElLapizBajo(){
+	public void test02SeMueveAlPersonajeConElLapizBajo(){
 	
 		Posicion posInicial = new Posicion(8, 10);
 		Posicion posFinal = new Posicion(8, 11);
@@ -53,7 +53,7 @@ class SectorDibujoTest {
 	}
 	
 	@Test
-	void test03PersonajeConBorradorEliminaLineaDeTablero(){
+	public void test03PersonajeConBorradorEliminaLineaDeTablero(){
 	
 		Posicion posInicial = new Posicion(8, 8);
 		Posicion posFinal = new Posicion(8, 9);
