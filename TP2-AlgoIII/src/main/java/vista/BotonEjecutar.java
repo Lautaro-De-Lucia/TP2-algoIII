@@ -5,10 +5,10 @@ import controller.InvocadorControl;
 import javafx.scene.control.Button;
 
 public class BotonEjecutar extends Button {
-    public BotonEjecutar(InvocadorControl invControl) {
+    public BotonEjecutar(InvocadorControl invControl, VistaTablero tablero) {
         super();
         this.setText("Ejecutar");
         this.setMinHeight(20);
-        this.setOnAction(new HandlerEjecutar(invControl));
+        this.setOnAction(new HandlerEjecutar(invControl, tablero));
     }
 }

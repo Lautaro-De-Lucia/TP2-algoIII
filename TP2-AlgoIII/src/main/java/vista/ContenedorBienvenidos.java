@@ -21,7 +21,7 @@ public class ContenedorBienvenidos extends StackPane{
         Button botonEntrar = new Button();
         botonEntrar.setText("Comenzar Juego");
 
-        Image imagen = new Image("https://i.imgur.com/h7uGZvQ.png");
+        Image imagen = new Image("welcome.png");
         ImageView mv = new ImageView(imagen);
         mv.fitWidthProperty().bind(stage.widthProperty());
         mv.setPreserveRatio(true);

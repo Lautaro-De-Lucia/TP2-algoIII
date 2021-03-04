@@ -1,5 +1,6 @@
 package eventos;
 
+import controller.Controlador;
 import controller.InvocadorControl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,8 +10,8 @@ import vista.VistaTablero;
 
 public class HandlerDerecha implements EventHandler<ActionEvent>  {
 
-    private InvocadorControl controlador;
-    public HandlerDerecha(InvocadorControl controlador){
+    private Controlador controlador;
+    public HandlerDerecha(Controlador controlador){
         this.controlador = controlador;
     }
 

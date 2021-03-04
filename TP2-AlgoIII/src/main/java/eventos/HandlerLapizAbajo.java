@@ -1,5 +1,6 @@
 package eventos;
 
+import controller.Controlador;
 import controller.InvocadorControl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,8 +9,8 @@ import modelo.sector_bloques.LapizAbajo;
 
 public class HandlerLapizAbajo implements EventHandler<ActionEvent> {
 
-    private InvocadorControl controlador;
-    public HandlerLapizAbajo(InvocadorControl controlador){
+    private Controlador controlador;
+    public HandlerLapizAbajo(Controlador controlador){
         this.controlador = controlador;
     }
 

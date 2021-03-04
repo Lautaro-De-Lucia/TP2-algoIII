@@ -11,9 +11,10 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
+
         primaryStage.setTitle("Algo-Blocks");
 
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(primaryStage);
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal();
 
         Scene escenaJuego = new Scene(contenedorPrincipal, 640.0D, 480.0D);
 

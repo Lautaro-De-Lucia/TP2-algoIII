@@ -15,19 +15,19 @@ public class Invocador implements Observable {
 	public Invocador(){
 		observadores = new ArrayList<Observador>();
 	}
-	
+
 	public void agregarBloque(Bloque bloque) {
 		colaDeBloques.add(bloque);
 		avisarObservadores();
 	}
-	
+
 	public void ejecutarSecuencia() {
-	    sectorDibujo.reiniciarTablero();
+		sectorDibujo.reiniciarTablero();
 		for (Bloque bloque : colaDeBloques) {bloque.ejecutar();}
 	}
-	
+
 	public void revertirSecuencia() {
-	     for (Bloque bloque : colaDeBloques) {bloque.ejecutarOpuesto();}
+		for (Bloque bloque : colaDeBloques) {bloque.ejecutarOpuesto();}
 	}
 
 	public void limpiarSecuencia(){

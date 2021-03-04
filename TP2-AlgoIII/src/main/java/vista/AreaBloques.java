@@ -1,5 +1,6 @@
 package vista;
 
+import controller.Controlador;
 import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -19,14 +20,14 @@ public class AreaBloques extends Group implements Observador {
     private int anchoBloque = 120;
     private int altoBloque = 40;
     private int margen = 12;
-    private Invocador invocador;
+    private Controlador controlador;
 
-    public AreaBloques(int ancho, int alto, Invocador nuevoInvocador){
+    public AreaBloques(int ancho, int alto, Controlador nuevoControlador){
         capa = nuevaCapa(ancho,alto);
         this.altoCapa = alto;
         this.anchoCapa = ancho;
         this.getChildren().add(capa);
-        this.invocador = nuevoInvocador;
+        this.controlador = nuevoControlador;
     }
 
 
@@ -48,9 +49,11 @@ public class AreaBloques extends Group implements Observador {
         StackPane stack = new StackPane();
         stack.getChildren().addAll(nuevo, text);
         stack.setLayoutX((this.anchoCapa - this.anchoBloque)/2);
+        /*
         stack.setOnContextMenuRequested(event -> {
             System.out.println(stack.getChildren().get(1));
         });
+        */
         try {
             int anteriorY = (int) (this.capa.getChildren().get(this.capa.getChildren().size() - 1)).getLayoutY();
             Arrow nuevaFlecha = new Arrow((this.anchoCapa)/2,anteriorY + this.altoBloque,(this.anchoCapa)/2,anteriorY+(this.anchoBloque/2));
@@ -68,7 +71,7 @@ public class AreaBloques extends Group implements Observador {
         this.getChildren().remove(this.capa);
         this.capa = nuevaCapa(this.anchoCapa,this.altoCapa);
         this.getChildren().add(this.capa);
-        ArrayList<Bloque> bloquesActuales = this.invocador.obtenerSecuencia();
+        ArrayList<Bloque> bloquesActuales = this.controlador.obtenerSecuencia();
         for (int counter = 0; counter < bloquesActuales.size(); counter++) {
             this.agregarBloque(bloquesActuales.get(counter).getNombre());
         }
