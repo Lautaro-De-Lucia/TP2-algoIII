@@ -83,7 +83,7 @@ public class VistaTablero extends Group implements Observador {
         personaje.setY(alto/2);
         personaje.setX(ancho/2);
 
-        personaje.setImage(new Image("https://i.imgur.com/zJRogCp.jpeg"));
+        personaje.setImage(new Image("penguin.jpeg"));
 
         return personaje;
     }
@@ -96,6 +96,7 @@ public class VistaTablero extends Group implements Observador {
         ImageView nuevoPersonaje = nuevoPersonaje(this.anchoTablero,this.altoTablero);
         this.capaPersonaje.getChildren().remove(this.personaje);
         this.personaje = nuevoPersonaje;
+
 
         this.capaPersonaje.getChildren().add(nuevoPersonaje);
         this.getChildren().add(nuevaCapa);
@@ -113,5 +114,6 @@ public class VistaTablero extends Group implements Observador {
         Linea aDibujar = sectorDibujo.obtenerLinea(testPos,nuevaPos);
         dibujarLinea(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, aDibujar.getColor());
         moverPersonaje(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50);
+
     }
 }
