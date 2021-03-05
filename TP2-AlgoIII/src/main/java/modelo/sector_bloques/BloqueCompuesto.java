@@ -19,7 +19,7 @@ public class BloqueCompuesto extends Bloque implements Observable {
 		for (Bloque bloque : bloques) {bloque.ejecutar();}
 	}
 
-	public void revertirSecuencia() {
+	public void ejecutarOpuesto() {
 		for (Bloque bloque : bloques) {bloque.ejecutarOpuesto();}
 	}
 
@@ -54,5 +54,8 @@ public class BloqueCompuesto extends Bloque implements Observable {
 		observadores.stream().forEach(observer -> observer.refrescar());
 	}
 
-
+	@Override
+	public ArrayList<Bloque> getSecuencia() {
+		return bloques;
+	}
 }

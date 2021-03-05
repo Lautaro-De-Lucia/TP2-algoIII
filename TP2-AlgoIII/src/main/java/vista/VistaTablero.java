@@ -1,6 +1,5 @@
 package vista;
 
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,11 +9,9 @@ import javafx.scene.shape.Line;
 import modelo.Observador;
 import modelo.sector_dibujo.*;
 
-import java.util.ArrayList;
-
 public class VistaTablero extends Group implements Observador {
-    public int anchoPersonaje = 32;
-    public int altoPersonaje = 32;
+    public int anchoPersonaje = 64;
+    public int altoPersonaje = 64;
     public int anchoTablero;
     public int altoTablero;
     private int grosorLinea = 5;
@@ -83,7 +80,7 @@ public class VistaTablero extends Group implements Observador {
         personaje.setY(alto/2);
         personaje.setX(ancho/2);
 
-        personaje.setImage(new Image("penguin.jpeg"));
+        personaje.setImage(new Image("pinguinoAbajo.png"));
 
         return personaje;
     }
@@ -99,7 +96,7 @@ public class VistaTablero extends Group implements Observador {
 
 
         this.capaPersonaje.getChildren().add(nuevoPersonaje);
-        this.getChildren().add(nuevaCapa);
+        this.getChildren().add(0,nuevaCapa);
     }
 
     @Override
@@ -114,6 +111,7 @@ public class VistaTablero extends Group implements Observador {
         Linea aDibujar = sectorDibujo.obtenerLinea(testPos,nuevaPos);
         dibujarLinea(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, aDibujar.getColor());
         moverPersonaje(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50);
+
 
     }
 }

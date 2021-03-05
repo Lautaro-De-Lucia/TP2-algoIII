@@ -26,7 +26,7 @@ public class Repetir extends BloqueCompuesto {
 
 	}
 
-	public void revertirSecuencia() {
+	public void ejecutarOpuesto() {
 		for (int i = 0; i < repeticiones; i++)
 			super.ejecutarOpuesto();
 	}

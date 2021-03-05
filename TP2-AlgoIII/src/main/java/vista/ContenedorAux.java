@@ -16,9 +16,9 @@ public class ContenedorAux extends BorderPane{
 
     public ContenedorAux(Invocador invocador, Controlador invControl, BloqueCompuesto bloqueCompuesto) {
 
-        InvocadorControl invocadorControl = (InvocadorControl) invControl;
+        //InvocadorControl invocadorControl = (InvocadorControl) invControl;
 
-        CompuestosControl controlCompuesto = new CompuestosControl(bloqueCompuesto, invocadorControl);
+        CompuestosControl controlCompuesto = new CompuestosControl(bloqueCompuesto, invControl);
 
 
         AreaBloques pg = new AreaBloques(256,712, controlCompuesto);
@@ -43,9 +43,9 @@ public class ContenedorAux extends BorderPane{
         Label labelCompuestos = new Label("Bloques Compuestos");
         Stage stageAux = new Stage();
         bloquesCompuestos.getChildren().add(labelCompuestos);
-        bloquesCompuestos.getChildren().add(new BotonInvertir(stageAux,invocadorControl,invocador));
-        bloquesCompuestos.getChildren().add(new BotonRepetir2(stageAux,invocadorControl,invocador));
-        bloquesCompuestos.getChildren().add(new BotonPersonalizado(stageAux,invocadorControl,invocador));
+        bloquesCompuestos.getChildren().add(new BotonInvertir(stageAux,controlCompuesto,invocador));
+        bloquesCompuestos.getChildren().add(new BotonRepetir2(stageAux,controlCompuesto,invocador));
+        bloquesCompuestos.getChildren().add(new BotonPersonalizado(stageAux,controlCompuesto,invocador));
 
         VBox sectorBloques= new VBox();
         sectorBloques.getChildren().add(bloquesMov);

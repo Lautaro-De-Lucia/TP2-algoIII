@@ -55,15 +55,29 @@ public class AreaBloques extends Group implements Observador {
     }
 
 
-    public void agregarBloque(String nombre){
+    public void recBloques(ArrayList<Bloque> listaBloques,float escala){
+
+        for (int i=0; i<listaBloques.size(); i++){
+            agregarBloque(listaBloques.get(i).getNombre(),escala);
+            //System.out.println(listaBloques.get(i).getNombre());
+            //System.out.println(listaBloques.size());
+            //System.out.println(listaBloques.get(i).getSecuencia());
+            recBloques(listaBloques.get(i).getSecuencia(), (float) (escala - 0.1));
+        }
+    }
+
+
+
+    public void agregarBloque(String nombre, float escala){
         Rectangle nuevo = new Rectangle();
-        nuevo.setHeight(altoBloque);
-        nuevo.setWidth(anchoBloque);
+        //System.out.println(escala);
+        nuevo.setHeight((int)((altoBloque * escala)));
+        nuevo.setWidth((int)(anchoBloque * escala));
         nuevo.setFill(Color.GREENYELLOW);
         Text text = new Text(nombre);
         StackPane stack = new StackPane();
         stack.getChildren().addAll(nuevo, text);
-        stack.setLayoutX((this.anchoCapa - this.anchoBloque)/2);
+        stack.setLayoutX((this.anchoCapa - this.anchoBloque*escala)/2);
         try {
             int anteriorY = (int) (this.capa.getChildren().get(this.capa.getChildren().size() - 1)).getLayoutY();
             Arrow nuevaFlecha = new Arrow((this.anchoCapa)/2,anteriorY + this.altoBloque,(this.anchoCapa)/2,anteriorY+(this.anchoBloque/2));
@@ -73,9 +87,9 @@ public class AreaBloques extends Group implements Observador {
         catch (Exception e){
             stack.setLayoutY(margen);
         }
-        if (stack.getLayoutY()+40 > altoCapa){
-            this.capa.setPrefHeight(stack.getLayoutY()+40);
-            this.altoCapa = (int) (stack.getLayoutY() + 40);
+        if (stack.getLayoutY()+this.altoBloque > altoCapa){
+            this.capa.setPrefHeight(stack.getLayoutY()+ this.altoBloque);
+            this.altoCapa = (int) (stack.getLayoutY() + this.altoBloque);
         }
         this.capa.getChildren().add(stack);
     }
@@ -89,7 +103,8 @@ public class AreaBloques extends Group implements Observador {
         //this.scrollPane.setContent(this.capa);
         ArrayList<Bloque> bloquesActuales = this.controlador.obtenerSecuencia();
         for (int counter = 0; counter < bloquesActuales.size(); counter++) {
-            this.agregarBloque(bloquesActuales.get(counter).getNombre());
+            //this.agregarBloque(bloquesActuales.get(counter).getNombre());
         }
+        recBloques(bloquesActuales,1);
     }
 }

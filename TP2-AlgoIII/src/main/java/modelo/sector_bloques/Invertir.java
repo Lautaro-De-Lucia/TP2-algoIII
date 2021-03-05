@@ -9,7 +9,7 @@ public class Invertir extends BloqueCompuesto implements Observable {
 	String nombre = "Invertir";
 	private ArrayList<Observador> observadores = new ArrayList<Observador>();
 
-	public void ejecutarNO() {
+	public void ejecutaropuesto() {
 		for (int i = bloques.size() - 1; i >= 0; i--) {
 			bloques.get(i).ejecutar();
 		}
