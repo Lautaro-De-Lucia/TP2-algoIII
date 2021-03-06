@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class CompuestosControl implements Controlador {
     private BloqueCompuesto bloque;
-    private InvocadorControl invControl;
+    private Controlador invControl;
 
-    public CompuestosControl(BloqueCompuesto nuevoBloque, InvocadorControl nuevoControlador){
+    public CompuestosControl(BloqueCompuesto nuevoBloque, Controlador nuevoControlador){
         this.bloque = nuevoBloque;
         this.invControl = nuevoControlador;
     }
@@ -25,6 +25,11 @@ public class CompuestosControl implements Controlador {
 
     public ArrayList<Bloque> obtenerSecuencia(){
         return bloque.obtenerSecuencia();
+    }
+
+    @Override
+    public void quitarBloque() {
+        bloque.quitarBloque();
     }
 
     public void limpiar() {

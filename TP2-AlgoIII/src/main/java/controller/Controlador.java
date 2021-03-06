@@ -13,4 +13,6 @@ public interface Controlador {
     public void limpiar();
 
     public ArrayList<Bloque> obtenerSecuencia();
+
+    public void quitarBloque();
 }

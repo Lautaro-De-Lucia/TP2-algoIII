@@ -4,22 +4,18 @@ import controller.Controlador;
 import controller.InvocadorControl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import vista.VistaTablero;
 
-public class HandlerLimpiar implements EventHandler<ActionEvent> {
+public class HandlerBorrarUltimo implements EventHandler<ActionEvent> {
 
     private Controlador controlador;
-    private VistaTablero tablero;
 
-    public HandlerLimpiar(Controlador controlador, VistaTablero tablero) {
+    public HandlerBorrarUltimo(Controlador controlador) {
         this.controlador = controlador;
-        this.tablero = tablero;
     }
 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.tablero.reiniciarTablero();
-        this.controlador.limpiar();
+        this.controlador.quitarBloque();
     }
 }

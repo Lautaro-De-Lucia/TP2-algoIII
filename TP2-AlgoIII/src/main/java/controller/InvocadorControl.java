@@ -22,6 +22,11 @@ public class InvocadorControl implements Controlador{
         return invocador.obtenerSecuencia();
     }
 
+    @Override
+    public void quitarBloque() {
+        invocador.quitarBloque();
+    }
+
     public void ejecutar(){
         this.invocador.ejecutarSecuencia();
     }

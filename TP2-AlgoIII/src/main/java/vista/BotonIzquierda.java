@@ -9,7 +9,9 @@ public class BotonIzquierda extends Button {
     public BotonIzquierda(Controlador controlador) {
         super();
         this.setText("Boton Izquierda");
-        this.setMinHeight(20);
+        //this.setMinHeight(20);
+        //this.autosize();
+        this.setPrefSize(160,40);
         this.setOnAction(new HandlerIzquierda(controlador));
     }
 }

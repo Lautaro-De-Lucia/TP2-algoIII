@@ -11,7 +11,8 @@ public class BotonLapizAbajo extends Button {
     public BotonLapizAbajo(Controlador controlador) {
         super();
         this.setText("Boton Lapiz Abajo");
-        this.setMinHeight(20);
+        //this.setMinHeight(20);
+        this.setPrefSize(160,40);
         this.setOnAction(new HandlerLapizAbajo(controlador));
     }
 }
