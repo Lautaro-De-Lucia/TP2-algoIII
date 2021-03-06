@@ -9,7 +9,8 @@ public class BotonLapizArriba extends Button {
     public BotonLapizArriba(Controlador controlador) {
         super();
         this.setText("Boton Lapiz Arriba");
-        this.setMinHeight(20);
+        //this.setMinHeight(20);
+        this.setPrefSize(160,40);
         this.setOnAction(new HandlerLapizArriba(controlador));
     }
 }

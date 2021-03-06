@@ -9,7 +9,10 @@ public class BotonArriba extends Button {
     public BotonArriba(Controlador controlador) {
         super();
         this.setText("Boton Arriba");
-        this.setMinHeight(20);
+        //this.setMinHeight(20);
+        //this.autosize();
+        //this.setPrefHeight(40);
+        this.setPrefSize(160,40);
         this.setOnAction(new HandlerArriba(controlador));
     }
 }

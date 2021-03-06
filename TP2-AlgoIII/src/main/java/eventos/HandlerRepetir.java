@@ -10,20 +10,22 @@ import modelo.sector_bloques.Invocador;
 import modelo.sector_bloques.Repetir;
 import vista.ContenedorAux;
 
-public class HandlerRepetir2 implements EventHandler<ActionEvent> {
+public class HandlerRepetir implements EventHandler<ActionEvent> {
     private Stage stage;
     private Controlador invC;
     private Invocador invocador;
-    public HandlerRepetir2(Stage primaryStage, Controlador invControl, Invocador invocador){
-        //this.controlador = controlador;
+    private int repeticiones;
+
+    public HandlerRepetir(Stage primaryStage, Controlador invControl, Invocador invocador, int repeticiones){
         this.stage = primaryStage;
         this.invC = invControl;
         this.invocador = invocador;
+        this.repeticiones = repeticiones;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        BloqueCompuesto invertir = new Repetir(2);
+        BloqueCompuesto invertir = new Repetir(repeticiones);
         ContenedorAux ventanaAux = new ContenedorAux(invocador, invC, invertir);
         Scene escenaAux = new Scene(ventanaAux, 600,850);
         stage.setScene(escenaAux);

@@ -56,12 +56,18 @@ public class VistaTablero extends Group implements Observador {
 
     }
 
-    public void moverPersonaje(int posX, int posY){
+    public void moverPersonaje(int posX, int posY, modelo.sector_dibujo.Color colorActual){
+        if (colorActual == modelo.sector_dibujo.Color.NULO){
+            this.personaje.setImage(new Image("pinguinoArriba.png"));
+            System.out.println("arriba");
+        }else {
+            this.personaje.setImage(new Image("pinguinoAbajo.png"));
+        }
         this.personaje.setX(posX);
         this.personaje.setY(altoTablero - posY);
     }
 
-    public void establecerLapiz(Lapiz lapizactual){
+    public void establecerLapiz(Color colorActual){
     }
 
     public Pane crearCapaLineas(int ancho, int alto){
@@ -110,7 +116,7 @@ public class VistaTablero extends Group implements Observador {
         Posicion testPos = new Posicion(actual.obtenerCoordX(),this.dimensionOriginal-actual.obtenerCoordY());
         Linea aDibujar = sectorDibujo.obtenerLinea(testPos,nuevaPos);
         dibujarLinea(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, aDibujar.getColor());
-        moverPersonaje(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50);
+        moverPersonaje(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, personaje.obtenerLapiz().obtenerColor());
 
 
     }

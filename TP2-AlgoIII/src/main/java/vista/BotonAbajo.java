@@ -10,7 +10,8 @@ public class BotonAbajo extends Button {
     public BotonAbajo(Controlador invControl) {
         super();
         this.setText("Boton Abajo");
-        this.setMinHeight(20);
+        //this.setMinHeight(20);
+        this.setPrefSize(160,40);
         this.setOnAction(new HandlerAbajo(invControl));
     }
 }

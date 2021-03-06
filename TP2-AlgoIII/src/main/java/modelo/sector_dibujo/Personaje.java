@@ -44,6 +44,10 @@ public class Personaje {
 		this.lapiz.cambiarColor(colorNuevo);
 	}
 
+	public Lapiz obtenerLapiz(){
+		return lapiz;
+	}
+
 	public void mover(Direccion direccionNueva) {
 
 		Posicion posicionOriginal = new Posicion(this.posicion);

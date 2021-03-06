@@ -21,39 +21,15 @@ public class ContenedorPrincipal extends BorderPane{
     public ContenedorPrincipal() {
         this.setStyle("-fx-background-color: #94DBF2");
         invocador.addObserver(areaBloques);
-        VBox bloquesMov = new VBox();
-        Label labelMov = new Label("Bloques Movimiento");
 
-        bloquesMov.getChildren().add(labelMov);
-        bloquesMov.getChildren().add(new BotonArriba(invocadorControl));
-        bloquesMov.getChildren().add(new BotonAbajo(invocadorControl));
-        bloquesMov.getChildren().add(new BotonDerecha(invocadorControl));
-        bloquesMov.getChildren().add(new BotonIzquierda(invocadorControl));
 
-        VBox bloquesLapiz= new VBox();
-        Label labelLapiz = new Label("Bloques Lapiz");
-        bloquesLapiz.getChildren().add(labelLapiz);
-        bloquesLapiz.getChildren().add(new BotonLapizAbajo(invocadorControl));
-        bloquesLapiz.getChildren().add(new BotonLapizArriba(invocadorControl));
+        VBox sectorBloques = new ObtenerBotonera(invocadorControl,invocador);
 
-        VBox bloquesCompuestos = new VBox();
-        Label labelCompuestos = new Label("Bloques Compuestos");
-        Stage stageAux = new Stage();
-        bloquesCompuestos.getChildren().add(labelCompuestos);
-        bloquesCompuestos.getChildren().add(new BotonInvertir(stageAux,invocadorControl,invocador));
-        bloquesCompuestos.getChildren().add(new BotonRepetir2(stageAux,invocadorControl,invocador));
-        bloquesCompuestos.getChildren().add(new BotonPersonalizado(stageAux,invocadorControl,invocador));
-
-        VBox sectorBloques= new VBox();
-        sectorBloques.getChildren().add(bloquesMov);
-        sectorBloques.getChildren().add(bloquesLapiz);
-        sectorBloques.getChildren().add(bloquesCompuestos);
 
         VBox sectorDibujo = new VBox();
         Label labelPersonaje = new Label("Area Personaje");
         sectorDibujo.getChildren().add(labelPersonaje);
         sectorDibujo.getChildren().add(tablero);
-        //sectorDibujo.getChildren().add(new BotonLimpiarTablero(tablero));
 
         VBox sectorAlgoritmo = new VBox();
         Label labelBloques = new Label("Area Algoritmo");
