@@ -29,7 +29,7 @@ public class ContenedorAux extends BorderPane{
         sectorAlgoritmo.getChildren().add(labelBloques);
         sectorAlgoritmo.getChildren().add(pg);
         sectorAlgoritmo.getChildren().add(new BotonGuardar(controlCompuesto));
-        sectorAlgoritmo.getChildren().add(new BotonLimpiar(controlCompuesto));
+        sectorAlgoritmo.getChildren().add(new BotonLimpiarAux(controlCompuesto));
         sectorAlgoritmo.getChildren().add(new BotonBorrarUltimo(controlCompuesto));
 
         this.setCenter(sectorAlgoritmo);
