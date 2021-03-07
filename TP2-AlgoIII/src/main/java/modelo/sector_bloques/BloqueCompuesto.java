@@ -29,7 +29,9 @@ public class BloqueCompuesto extends Bloque implements Observable {
 
 	//Remueve el ultimo bloque que se agregó
 	public void quitarBloque() {
-		bloques.remove((bloques.size()-1));
+		try {
+			bloques.remove((bloques.size()-1));
+		}catch(Exception e){};
 		avisarObservadores();
 	}
 

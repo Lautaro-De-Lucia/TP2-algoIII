@@ -9,6 +9,7 @@ import javafx.scene.shape.Line;
 import modelo.Observador;
 import modelo.sector_dibujo.*;
 
+
 public class VistaTablero extends Group implements Observador {
     public int anchoPersonaje = 64;
     public int altoPersonaje = 64;
@@ -67,12 +68,10 @@ public class VistaTablero extends Group implements Observador {
         this.personaje.setY(altoTablero - posY);
     }
 
-    public void establecerLapiz(Color colorActual){
-    }
 
     public Pane crearCapaLineas(int ancho, int alto){
         Pane nuevaCapaLineas = new Pane();
-        nuevaCapaLineas.setStyle("-fx-background-color: lightblue;");
+        nuevaCapaLineas.setStyle("-fx-background-color: lightblue; -fx-background-image: url('fondo.png');");
         nuevaCapaLineas.setPrefSize(ancho,alto);
         return nuevaCapaLineas;
     }
@@ -117,7 +116,5 @@ public class VistaTablero extends Group implements Observador {
         Linea aDibujar = sectorDibujo.obtenerLinea(testPos,nuevaPos);
         dibujarLinea(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, aDibujar.getColor());
         moverPersonaje(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, personaje.obtenerLapiz().obtenerColor());
-
-
     }
 }

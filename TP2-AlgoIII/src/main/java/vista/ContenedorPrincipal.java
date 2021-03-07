@@ -15,7 +15,7 @@ public class ContenedorPrincipal extends BorderPane{
     Invocador invocador = new Invocador();
     InvocadorControl invocadorControl = new InvocadorControl(invocador);
     VistaTablero tablero = new VistaTablero(800,800);
-    AreaBloques areaBloques = new AreaBloques(256,712,invocadorControl);
+    AreaBloques areaBloques = new AreaBloques(384,712,invocadorControl);
 
 
     public ContenedorPrincipal() {
@@ -28,11 +28,19 @@ public class ContenedorPrincipal extends BorderPane{
 
         VBox sectorDibujo = new VBox();
         Label labelPersonaje = new Label("Area Personaje");
+        labelPersonaje.setAlignment(Pos.CENTER);
+        labelPersonaje.setPrefSize(800,40);
+        labelPersonaje.setStyle("-fx-font: 16 arial");
+
         sectorDibujo.getChildren().add(labelPersonaje);
         sectorDibujo.getChildren().add(tablero);
 
         VBox sectorAlgoritmo = new VBox();
         Label labelBloques = new Label("Area Algoritmo");
+        labelBloques.setAlignment(Pos.CENTER);
+        labelBloques.setPrefSize(384,40);
+        labelBloques.setStyle("-fx-font: 16 arial");
+
         sectorAlgoritmo.getChildren().add(labelBloques);
         sectorAlgoritmo.getChildren().add(areaBloques);
         sectorAlgoritmo.getChildren().add(new BotonEjecutar(invocadorControl, tablero));

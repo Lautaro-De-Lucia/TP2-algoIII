@@ -36,7 +36,9 @@ public class Invocador implements Observable {
 	}
 
 	public void quitarBloque() {
-		colaDeBloques.remove((colaDeBloques.size()-1));
+		try {
+			colaDeBloques.remove((colaDeBloques.size()-1));
+		} catch (Exception e) {}
 		avisarObservadores();
 	}
 

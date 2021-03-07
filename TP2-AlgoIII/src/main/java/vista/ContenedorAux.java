@@ -7,18 +7,18 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import modelo.sector_bloques.BloqueCompuesto;
 import modelo.sector_bloques.Invocador;
 
 public class ContenedorAux extends BorderPane{
 
     public ContenedorAux(Invocador invocador, Controlador controlador, BloqueCompuesto bloqueCompuesto) {
+        this.setStyle("-fx-background-color: #94DBF2");
 
         CompuestosControl controlCompuesto = new CompuestosControl(bloqueCompuesto, controlador);
 
 
-        AreaBloques pg = new AreaBloques(256,712, controlCompuesto);
+        AreaBloques pg = new AreaBloques(384,712, controlCompuesto);
         bloqueCompuesto.addObserver(pg);
 
         VBox sectorBloques = new ObtenerBotonera(controlCompuesto,invocador);
@@ -26,6 +26,9 @@ public class ContenedorAux extends BorderPane{
 
         VBox sectorAlgoritmo = new VBox();
         Label labelBloques = new Label("Area Algoritmo");
+        labelBloques.setAlignment(Pos.CENTER);
+        labelBloques.setPrefSize(384,40);
+        labelBloques.setStyle("-fx-font: 16 arial");
         sectorAlgoritmo.getChildren().add(labelBloques);
         sectorAlgoritmo.getChildren().add(pg);
         sectorAlgoritmo.getChildren().add(new BotonGuardar(controlCompuesto));
