@@ -27,7 +27,7 @@ public class ContenedorAux extends BorderPane{
         VBox sectorAlgoritmo = new VBox();
         Label labelBloques = new Label("Area Algoritmo");
         labelBloques.setAlignment(Pos.CENTER);
-        labelBloques.setPrefSize(256,40);
+        labelBloques.setPrefSize(384,40);
         labelBloques.setStyle("-fx-font: 16 arial");
         sectorAlgoritmo.getChildren().add(labelBloques);
         sectorAlgoritmo.getChildren().add(pg);
