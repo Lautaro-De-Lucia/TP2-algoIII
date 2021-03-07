@@ -18,7 +18,6 @@ public class HandlerGuardar implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         this.compControl.ejecutar();
-        /*CORRECTO?*/
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
         thisStage.close();

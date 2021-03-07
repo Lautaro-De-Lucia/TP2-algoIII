@@ -16,7 +16,7 @@ public class App extends Application {
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal();
 
-        Scene escenaJuego = new Scene(contenedorPrincipal, 640.0D, 480.0D);
+        Scene escenaJuego = new Scene(contenedorPrincipal, 1440.0D, 900.0D);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(primaryStage, escenaJuego);
 

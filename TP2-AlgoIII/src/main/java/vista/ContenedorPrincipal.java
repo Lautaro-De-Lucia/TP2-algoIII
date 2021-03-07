@@ -15,7 +15,7 @@ public class ContenedorPrincipal extends BorderPane{
     Invocador invocador = new Invocador();
     InvocadorControl invocadorControl = new InvocadorControl(invocador);
     VistaTablero tablero = new VistaTablero(800,800);
-    AreaBloques areaBloques = new AreaBloques(256,712,invocadorControl);
+    AreaBloques areaBloques = new AreaBloques(384,712,invocadorControl);
 
 
     public ContenedorPrincipal() {
