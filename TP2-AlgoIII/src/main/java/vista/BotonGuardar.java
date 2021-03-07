@@ -8,7 +8,8 @@ public class BotonGuardar extends Button {
     public BotonGuardar(Controlador compControl) {
         super();
         this.setText("Guardar");
-        this.setMinHeight(20);
+        this.setPrefSize(256,40);
+        this.setStyle("-fx-font-size: 16");
         this.setOnAction(new HandlerGuardar(compControl));
     }
 }

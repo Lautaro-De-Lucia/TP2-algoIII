@@ -12,12 +12,10 @@ import vista.ContenedorAux;
 
 public class HandlerInvertir implements EventHandler<ActionEvent> {
 
-    //private Controlador controlador;
     private Stage stage;
     private Controlador invC;
     private Invocador invocador;
     public HandlerInvertir(Stage primaryStage, Controlador invControl, Invocador invocador){
-        //this.controlador = controlador;
         this.stage = primaryStage;
         this.invC = invControl;
         this.invocador = invocador;
@@ -27,7 +25,7 @@ public class HandlerInvertir implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         BloqueCompuesto invertir = new Invertir();
         ContenedorAux ventanaAux = new ContenedorAux(invocador, invC, invertir);
-        Scene escenaAux = new Scene(ventanaAux, 600,850);
+        Scene escenaAux = new Scene(ventanaAux, 600,900);
         stage.setScene(escenaAux);
         stage.show();
     }

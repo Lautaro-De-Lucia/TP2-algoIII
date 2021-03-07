@@ -4,8 +4,6 @@ import controller.Controlador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import modelo.sector_bloques.Invocador;
 

@@ -10,8 +10,8 @@ public class BotonInvertir extends Button {
     BotonInvertir(Stage stage, Controlador invControl, Invocador invocador){
         super();
         this.setText("Invertir");
-        //this.setMinHeight(20);
-        this.setPrefSize(160,40);
+        this.setStyle("-fx-font-size: 16");
+        this.setPrefSize(160,60);
         this.setOnAction(new HandlerInvertir(stage, invControl, invocador));
     }
 }

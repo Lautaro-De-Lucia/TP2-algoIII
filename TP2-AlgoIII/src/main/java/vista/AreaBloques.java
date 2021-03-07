@@ -8,12 +8,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import modelo.Observador;
 import modelo.sector_bloques.Bloque;
-import modelo.sector_bloques.Invocador;
+
 
 import java.util.ArrayList;
 
@@ -21,9 +19,11 @@ public class AreaBloques extends Group implements Observador {
     private Pane capa;
     private int altoCapa;
     private int anchoCapa;
-    private int anchoBloque = 120;
-    private int altoBloque = 40;
+    private int anchoBloque = 150;
+    private int altoBloque = 50;
     private int margen = 12;
+    private int altoScroll;
+    private int anchoScroll;
     private Controlador controlador;
     ScrollPane scrollPane;
 
@@ -31,37 +31,34 @@ public class AreaBloques extends Group implements Observador {
         capa = nuevaCapa(ancho,alto);
         this.altoCapa = alto;
         this.anchoCapa = ancho;
-        this.scrollPane = new ScrollPane();
+        this.anchoScroll = ancho;
+        this.altoScroll = alto;
+        this.scrollPane = nuevoScroll(anchoScroll,altoScroll);
         scrollPane.setContent(capa);
-        scrollPane.setFitToWidth(true);
-        //scrollPane.setFitToHeight(true);
-        scrollPane.setPrefSize(300, 700);
-        AnchorPane.setTopAnchor(scrollPane, 0.);
-        AnchorPane.setRightAnchor(scrollPane, 0.);
-        AnchorPane.setBottomAnchor(scrollPane, 0.);
-        AnchorPane.setLeftAnchor(scrollPane, 0.);
         this.getChildren().add(scrollPane);
-        //this.getChildren().add(this.capa);
         this.controlador = nuevoControlador;
+    }
+
+    public ScrollPane nuevoScroll(int ancho, int alto){
+        ScrollPane nuevoScroll = new ScrollPane();
+        nuevoScroll.setFitToWidth(true);
+        nuevoScroll.setPrefSize(ancho, alto);
+        nuevoScroll.setVvalue(1.0d);
+        return nuevoScroll;
     }
 
 
     public Pane nuevaCapa(int ancho,int alto){
-        Pane nuevacapa = new Pane();
-        //nuevacapa = new Pane();
-        nuevacapa.setStyle("-fx-background-color: lightblue;");
-        nuevacapa.setPrefSize(ancho,alto);
-        return nuevacapa;
+        Pane nuevaCapa = new Pane();
+        nuevaCapa.setStyle("-fx-background-color: lightblue;");
+        nuevaCapa.setPrefSize(ancho,alto);
+        return nuevaCapa;
     }
 
 
     public void recBloques(ArrayList<Bloque> listaBloques,float escala){
-
         for (int i=0; i<listaBloques.size(); i++){
             agregarBloque(listaBloques.get(i).getNombre(),escala);
-            //System.out.println(listaBloques.get(i).getNombre());
-            //System.out.println(listaBloques.size());
-            //System.out.println(listaBloques.get(i).getSecuencia());
             recBloques(listaBloques.get(i).getSecuencia(), (float) (escala - 0.1));
         }
     }
@@ -69,20 +66,17 @@ public class AreaBloques extends Group implements Observador {
 
 
     public void agregarBloque(String nombre, float escala){
-        Rectangle nuevo = new Rectangle();
-        //System.out.println(escala);
-        nuevo.setHeight((int)((altoBloque * escala)));
-        nuevo.setWidth((int)(anchoBloque * escala));
-        nuevo.setFill(Color.GREENYELLOW);
+        ImageView bloque = new ImageView(new Image("bloque.png",anchoBloque*escala,altoBloque*escala,false,false));
         Text text = new Text(nombre);
+        text.setStyle("-fx-font: 18 arial");
         StackPane stack = new StackPane();
-        stack.getChildren().addAll(nuevo, text);
+        stack.getChildren().addAll(bloque, text);
         stack.setLayoutX((this.anchoCapa - this.anchoBloque*escala)/2);
         try {
             int anteriorY = (int) (this.capa.getChildren().get(this.capa.getChildren().size() - 1)).getLayoutY();
             Arrow nuevaFlecha = new Arrow((this.anchoCapa)/2,anteriorY + this.altoBloque,(this.anchoCapa)/2,anteriorY+(this.anchoBloque/2));
             this.capa.getChildren().add(nuevaFlecha);
-            stack.setLayoutY(anteriorY + 60);
+            stack.setLayoutY(anteriorY + anchoBloque/2);
         }
         catch (Exception e){
             stack.setLayoutY(margen);
@@ -96,15 +90,12 @@ public class AreaBloques extends Group implements Observador {
 
     @Override
     public void refrescar() {
-        this.getChildren().remove(this.capa);
-        this.capa = nuevaCapa(this.anchoCapa,this.altoCapa);
+        this.capa = nuevaCapa(this.anchoScroll,this.altoScroll);
+        this.getChildren().remove(this.scrollPane);
+        this.scrollPane = nuevoScroll(anchoScroll,altoScroll);
         this.scrollPane.setContent(this.capa);
-        //this.getChildren().add(this.capa);
-        //this.scrollPane.setContent(this.capa);
+        this.getChildren().add(this.scrollPane);
         ArrayList<Bloque> bloquesActuales = this.controlador.obtenerSecuencia();
-        for (int counter = 0; counter < bloquesActuales.size(); counter++) {
-            //this.agregarBloque(bloquesActuales.get(counter).getNombre());
-        }
         recBloques(bloquesActuales,1);
     }
 }

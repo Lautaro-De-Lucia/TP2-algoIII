@@ -107,7 +107,8 @@ public class SectorDibujo implements Observable {
         avisarObservadores();
     }
 
-    public void bajarLapiz(){this.personaje.bajarLapiz();}
+    public void bajarLapiz(){
+        this.personaje.bajarLapiz();}
 
     public void levantarLapiz(){this.personaje.levantarLapiz();}
 

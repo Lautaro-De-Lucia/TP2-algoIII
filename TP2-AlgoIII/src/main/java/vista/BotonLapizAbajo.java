@@ -2,17 +2,15 @@ package vista;
 
 
 import controller.Controlador;
-import controller.InvocadorControl;
 import eventos.HandlerLapizAbajo;
-import eventos.HandlerLapizArriba;
 import javafx.scene.control.Button;
 
 public class BotonLapizAbajo extends Button {
     public BotonLapizAbajo(Controlador controlador) {
         super();
         this.setText("Boton Lapiz Abajo");
-        //this.setMinHeight(20);
-        this.setPrefSize(160,40);
+        this.setStyle("-fx-font-size: 16");
+        this.setPrefSize(160,60);
         this.setOnAction(new HandlerLapizAbajo(controlador));
     }
 }

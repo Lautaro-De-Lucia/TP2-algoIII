@@ -8,7 +8,8 @@ public class BotonBorrarUltimo extends Button {
     public BotonBorrarUltimo(Controlador controlador) {
         super();
         this.setText("Borrar Ultimo Bloque");
-        this.setMinHeight(20);
+        this.setStyle("-fx-font-size: 16");
+        this.setPrefSize(256,40);
         this.setOnAction(new HandlerBorrarUltimo(controlador));
     }
 }

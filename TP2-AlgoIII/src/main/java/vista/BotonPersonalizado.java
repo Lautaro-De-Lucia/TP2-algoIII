@@ -10,8 +10,8 @@ public class BotonPersonalizado extends Button {
     BotonPersonalizado(Stage stage, Controlador invControl, Invocador invocador){
         super();
         this.setText("Personalizado");
-        //this.setMinHeight(20);
-        this.setPrefSize(160,40);
+        this.setStyle("-fx-font-size: 16");
+        this.setPrefSize(160,60);
         this.setOnAction(new HandlerPersonalizado(stage, invControl, invocador));
     }
 }

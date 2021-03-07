@@ -8,7 +8,8 @@ public class BotonEjecutar extends Button {
     public BotonEjecutar(InvocadorControl invControl, VistaTablero tablero) {
         super();
         this.setText("Ejecutar");
-        this.setMinHeight(20);
+        this.setStyle("-fx-font-size: 16");
+        this.setPrefSize(256,40);
         this.setOnAction(new HandlerEjecutar(invControl, tablero));
     }
 }

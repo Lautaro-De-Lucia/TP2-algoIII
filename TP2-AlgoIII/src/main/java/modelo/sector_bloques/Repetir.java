@@ -5,7 +5,7 @@ import modelo.Observador;
 import java.util.ArrayList;
 
 public class Repetir extends BloqueCompuesto {
-	String nombre = "repetir";
+	String nombre = "Repetir ";
 	private ArrayList<Observador> observadores = new ArrayList<Observador>();;
 	//FACTORY PARA ENCAPSULAR LA REPETICION 2 Y 3 Y USAR SOLO UNA CLASE "REPETIR"
 
@@ -33,7 +33,7 @@ public class Repetir extends BloqueCompuesto {
 
 	@Override
 	public String getNombre() {
-		return nombre;
+		return nombre + repeticiones + " veces";
 	}
 
 

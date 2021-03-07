@@ -14,7 +14,6 @@ public class HandlerPersonalizado implements EventHandler<ActionEvent> {
     private Controlador invC;
     private Invocador invocador;
     public HandlerPersonalizado(Stage primaryStage, Controlador invControl, Invocador invocador){
-        //this.controlador = controlador;
         this.stage = primaryStage;
         this.invC = invControl;
         this.invocador = invocador;
@@ -24,7 +23,7 @@ public class HandlerPersonalizado implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         BloqueCompuesto personalizado = new BloqueCompuesto();
         ContenedorAux ventanaAux = new ContenedorAux(invocador, invC, personalizado);
-        Scene escenaAux = new Scene(ventanaAux, 600,850);
+        Scene escenaAux = new Scene(ventanaAux, 600,900);
         stage.setScene(escenaAux);
         stage.show();
     }
