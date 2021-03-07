@@ -4,14 +4,18 @@ import controller.Controlador;
 import controller.InvocadorControl;
 import eventos.HandlerIzquierda;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class BotonIzquierda extends Button {
     public BotonIzquierda(Controlador controlador) {
-        super();
-        this.setText("Boton Izquierda");
-        //this.setMinHeight(20);
-        //this.autosize();
-        this.setPrefSize(160,40);
+        Image bloqueIzquierda = new Image("izquierda.jpg");
+        ImageView view = new ImageView(bloqueIzquierda);
+        view.setFitHeight(55);
+        view.setPreserveRatio(true);
+        view.setSmooth(true);
+        super.setPrefSize(30,20);
+        super.setGraphic(view);
         this.setOnAction(new HandlerIzquierda(controlador));
     }
 }

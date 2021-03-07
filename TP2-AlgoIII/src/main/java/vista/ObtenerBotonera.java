@@ -45,8 +45,8 @@ public class ObtenerBotonera extends VBox {
         Stage stageAux = new Stage();
         bloquesCompuestos.getChildren().add(labelCompuestos);
         bloquesCompuestos.getChildren().add(new BotonInvertir(stageAux,controlador,invocador));
-        bloquesCompuestos.getChildren().add(new BotonRepetir(stageAux,controlador,invocador,2));
-        bloquesCompuestos.getChildren().add(new BotonRepetir(stageAux,controlador,invocador,3));
+        bloquesCompuestos.getChildren().add(new BotonRepetir2(stageAux,controlador,invocador,2));
+        bloquesCompuestos.getChildren().add(new BotonRepetir3(stageAux,controlador,invocador,3));
         bloquesCompuestos.getChildren().add(new BotonPersonalizado(stageAux,controlador,invocador));
 
         this.getChildren().add(bloquesMov);

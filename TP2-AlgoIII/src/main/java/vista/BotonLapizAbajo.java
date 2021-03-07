@@ -6,13 +6,18 @@ import controller.InvocadorControl;
 import eventos.HandlerLapizAbajo;
 import eventos.HandlerLapizArriba;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class BotonLapizAbajo extends Button {
     public BotonLapizAbajo(Controlador controlador) {
-        super();
-        this.setText("Boton Lapiz Abajo");
-        //this.setMinHeight(20);
-        this.setPrefSize(160,40);
+        Image lapizAbajo = new Image("lapiz abajo.jpg");
+        ImageView view = new ImageView(lapizAbajo);
+        view.setFitHeight(55);
+        view.setPreserveRatio(true);
+        view.setSmooth(true);
+        super.setPrefSize(30,20);
+        super.setGraphic(view);
         this.setOnAction(new HandlerLapizAbajo(controlador));
     }
 }
