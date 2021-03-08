@@ -61,7 +61,7 @@ public class Personaje {
 		this.posicion = nuevaPosicion;
 		this.orientacion = direccionNueva;
 
-		this.lapiz.dibujarLinea(posicionOriginal, nuevaPosicion);
+		this.lapiz.trazar(posicionOriginal, nuevaPosicion);
 
 		return;
 	}

@@ -71,7 +71,7 @@ public class SectorDibujo implements Observable {
                 return this.tablero.get(i);
             }
         }
-
+                
         return new LineaNula(new Posicion(0,0), new Posicion(0,0));
     }
 
