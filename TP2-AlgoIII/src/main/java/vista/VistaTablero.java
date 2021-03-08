@@ -43,7 +43,7 @@ public class VistaTablero extends Group implements Observador {
         this.getChildren().add(capaPersonaje);
     }
 
-    public void trazar(int xChange, int yChange, modelo.sector_dibujo.Color color){
+    public void dibujarLinea(int xChange, int yChange, modelo.sector_dibujo.Color color){
         Line nuevaLinea = new Line();
         nuevaLinea.setStartX(personaje.getX());
         nuevaLinea.setStartY(personaje.getY());
@@ -114,7 +114,7 @@ public class VistaTablero extends Group implements Observador {
         Posicion nuevaPos = new Posicion(personajePos.obtenerCoordX(),personajePos.obtenerCoordY());
         Posicion testPos = new Posicion(actual.obtenerCoordX(),this.dimensionOriginal-actual.obtenerCoordY());
         Linea aDibujar = sectorDibujo.obtenerLinea(testPos,nuevaPos);
-        trazar(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, aDibujar.getColor());
+        dibujarLinea(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, aDibujar.getColor());
         moverPersonaje(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, personaje.obtenerLapiz().obtenerColor());
     }
 }
