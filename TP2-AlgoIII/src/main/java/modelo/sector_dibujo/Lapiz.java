@@ -12,7 +12,7 @@ public abstract class Lapiz {
 		return colorLapiz;
 	}
 	
-    public abstract void dibujarLinea(Posicion posicion1, Posicion posicion2);
+    public abstract void trazar(Posicion posicion1, Posicion posicion2);
     
 
 }

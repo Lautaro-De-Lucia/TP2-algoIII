@@ -28,7 +28,7 @@ public class LapizTest {
 		Posicion posInicial = new Posicion(8, 7);
 		Posicion posFinal = new Posicion(8, 8);
 		
-		lapiz.dibujarLinea(posInicial, posFinal);
+		lapiz.trazar(posInicial, posFinal);
 				
 		Linea lineaDibujada = tablero.obtenerLinea(posInicial, posFinal);
 		Linea lineaReferencia = new LineaSolida(posInicial, posFinal);
@@ -45,7 +45,7 @@ public class LapizTest {
 		Posicion posInicial = new Posicion(9, 8);
 		Posicion posFinal = new Posicion(9, 9);
 		
-		lapiz.dibujarLinea(posInicial, posFinal);
+		lapiz.trazar(posInicial, posFinal);
 		 
 		Linea lineaDibujada = tablero.obtenerLinea(posInicial, posFinal);
 		Linea lineaReferencia = new LineaSolida(posInicial, posFinal);
