@@ -12,5 +12,11 @@ public class Amarillo extends Bloque {
 	public void ejecutarOpuesto() {
 		(receptor.obtenerPersonaje()).nuevoColorDeLapiz(Color.VIOLETA);
 	}
+
+
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
 }
 

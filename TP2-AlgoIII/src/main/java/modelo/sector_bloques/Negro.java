@@ -12,5 +12,11 @@ public class Negro extends Bloque {
 	public void ejecutarOpuesto() {
 		(receptor.obtenerPersonaje()).nuevoColorDeLapiz(Color.BLANCO);
 	}
+
+
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
 }
 

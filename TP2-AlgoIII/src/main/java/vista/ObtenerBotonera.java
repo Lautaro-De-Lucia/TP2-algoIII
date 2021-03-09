@@ -1,13 +1,14 @@
 package vista;
 
 import controller.Controlador;
+import javafx.collections.FXCollections;
 import javafx.geometry.Pos;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import modelo.sector_bloques.Invocador;
+
 
 public class ObtenerBotonera extends VBox {
 
@@ -34,6 +35,13 @@ public class ObtenerBotonera extends VBox {
         bloquesLapiz.getChildren().add(labelLapiz);
         bloquesLapiz.getChildren().add(new BotonLapizAbajo(controlador));
         bloquesLapiz.getChildren().add(new BotonLapizArriba(controlador));
+
+        String listaColores[] = { "Negro", "Blanco", "Azul", "Naranja", "Verde", "Rojo", "Amarillo", "Violeta" };
+        ComboBox comboBox = new ComboBox(FXCollections.observableArrayList(listaColores));
+        comboBox.setPrefSize(160,40);
+        comboBox.setStyle("-fx-font: 16 arial");
+        bloquesLapiz.getChildren().add(comboBox);
+        bloquesLapiz.getChildren().add(new BotonColores(controlador,comboBox));
 
 
         VBox bloquesCompuestos = new VBox();
