@@ -4,6 +4,7 @@ import controller.Controlador;
 import controller.InvocadorControl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import modelo.sector_dibujo.SectorDibujo;
 import vista.VistaTablero;
 
 public class HandlerLimpiar implements EventHandler<ActionEvent> {
@@ -20,6 +21,7 @@ public class HandlerLimpiar implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         this.tablero.reiniciarTablero();
+        SectorDibujo.obtenerInstancia().reiniciarTablero();
         this.controlador.limpiar();
     }
 }

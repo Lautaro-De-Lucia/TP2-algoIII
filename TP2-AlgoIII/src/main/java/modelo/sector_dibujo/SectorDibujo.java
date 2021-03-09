@@ -116,6 +116,7 @@ public class SectorDibujo implements Observable {
     public void reiniciarTablero() {
 
         this.personaje = new Personaje();
+        this.tablero = new ArrayList<Linea>();
 
         //Lineas horizontales
 

@@ -20,6 +20,7 @@ public class ContenedorAux extends BorderPane{
 
         AreaBloques pg = new AreaBloques(384,712, controlCompuesto);
         bloqueCompuesto.addObserver(pg);
+        bloqueCompuesto.avisarObservadores();
 
         VBox sectorBloques = new ObtenerBotonera(controlCompuesto,invocador);
 

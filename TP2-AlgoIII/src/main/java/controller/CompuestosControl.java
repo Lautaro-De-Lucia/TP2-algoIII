@@ -19,7 +19,6 @@ public class CompuestosControl implements Controlador {
     }
 
     public void ejecutar(){
-        System.out.println(bloque.obtenerSecuencia());
         this.invControl.agregarBloque(bloque);
     }
 
