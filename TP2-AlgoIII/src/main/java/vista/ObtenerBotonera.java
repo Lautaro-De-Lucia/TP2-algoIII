@@ -4,16 +4,16 @@ import controller.Controlador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import modelo.sector_bloques.Invocador;
+import javafx.scene.layout.HBox;
 
 public class ObtenerBotonera extends VBox {
 
     public ObtenerBotonera(Controlador controlador, Invocador invocador){
         super();
         VBox bloquesMov = new VBox();
+        HBox coloresCaja = new HBox();
         Label labelMov = new Label("Bloques Movimiento");
         labelMov.setAlignment(Pos.CENTER);
         labelMov.setPrefSize(160,40);
@@ -34,8 +34,14 @@ public class ObtenerBotonera extends VBox {
         bloquesLapiz.getChildren().add(labelLapiz);
         bloquesLapiz.getChildren().add(new BotonLapizAbajo(controlador));
         bloquesLapiz.getChildren().add(new BotonLapizArriba(controlador));
-
-
+        coloresCaja.getChildren().add(new BotonColorAzul(controlador));
+        coloresCaja.getChildren().add(new BotonColorAmarillo(controlador));
+        coloresCaja.getChildren().add(new BotonColorBlanco(controlador));
+        coloresCaja.getChildren().add(new BotonColorNaranja(controlador));
+        coloresCaja.getChildren().add(new BotonColorNegro(controlador));
+        coloresCaja.getChildren().add(new BotonColorRojo(controlador));
+        coloresCaja.getChildren().add(new BotonColorVerde(controlador));
+        coloresCaja.getChildren().add(new BotonColorVioleta(controlador));
         VBox bloquesCompuestos = new VBox();
         Label labelCompuestos = new Label("Bloques Compuestos");
         labelCompuestos.setAlignment(Pos.CENTER);
@@ -51,6 +57,7 @@ public class ObtenerBotonera extends VBox {
 
         this.getChildren().add(bloquesMov);
         this.getChildren().add(bloquesLapiz);
+        this.getChildren().add(coloresCaja);
         this.getChildren().add(bloquesCompuestos);
 
     }

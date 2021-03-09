@@ -12,5 +12,9 @@ public class Violeta extends Bloque {
 	public void ejecutarOpuesto() {
 		(receptor.obtenerPersonaje()).nuevoColorDeLapiz(Color.AMARILLO);
 	}
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
 }
 
