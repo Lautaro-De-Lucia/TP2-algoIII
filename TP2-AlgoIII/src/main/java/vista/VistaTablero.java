@@ -1,6 +1,7 @@
 package vista;
 
 import javafx.scene.Group;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -10,6 +11,8 @@ import modelo.Observador;
 import modelo.sector_dibujo.*;
 
 import java.util.ArrayList;
+
+import excepciones.FueraDeLimiteExcepcion;
 
 
 public class VistaTablero extends Group implements Observador {

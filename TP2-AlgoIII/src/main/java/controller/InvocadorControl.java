@@ -14,6 +14,8 @@ public class InvocadorControl implements Controlador{
     }
 
     public void agregarBloque(Bloque nuevo) {
+    	
+    	
         this.invocador.agregarBloque(nuevo);
         //System.out.println(invocador.obtenerSecuencia());
     }

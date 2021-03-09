@@ -2,12 +2,17 @@ package pruebas.sector_dibujo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import modelo.sector_dibujo.Linea;
 import modelo.sector_dibujo.LineaSolida;
 import modelo.sector_dibujo.Posicion;
 import modelo.sector_dibujo.SectorDibujo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+
+import excepciones.FueraDeLimiteExcepcion;
+
+
 
 public class SectorDibujoTest {
 
@@ -70,7 +75,19 @@ public class SectorDibujoTest {
 		
 	}
 	
-	
+	@Test
+	public void test04ObtenerLineaFueraDeLimitesArrojaExcepcion(){
+
+		Posicion posInicial = new Posicion(25, 48);
+		Posicion posFinal = new Posicion(25, 49);
+		LineaSolida unaLinea = new LineaSolida(posInicial, posFinal);
+
+		assertThrows(FueraDeLimiteExcepcion.class,
+                ()->{
+                	tablero.agregarLinea(unaLinea);
+                });
+
+	}
 	
 
 
