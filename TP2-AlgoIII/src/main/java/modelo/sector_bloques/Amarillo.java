@@ -13,7 +13,6 @@ public class Amarillo extends Bloque {
 		(receptor.obtenerPersonaje()).nuevoColorDeLapiz(Color.VIOLETA);
 	}
 
-
 	@Override
 	public String getNombre() {
 		return nombre;
