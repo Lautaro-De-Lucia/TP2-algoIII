@@ -3,6 +3,7 @@ import modelo.Observable;
 import modelo.Observador;
 
 import java.util.*;
+import excepciones.FueraDeLimiteExcepcion;
 
 
 public class SectorDibujo implements Observable {
@@ -56,9 +57,11 @@ public class SectorDibujo implements Observable {
         for (int i = 0; i < (this.tablero).size(); i++) {
             if(this.tablero.get(i).mismaUbicacion(nuevaLinea)) {
                 this.tablero.set(i, nuevaLinea);
-
+                return;
             }
         }
+        
+        throw new FueraDeLimiteExcepcion();
     }
 
     public Linea obtenerLinea(Posicion posicion1, Posicion posicion2) {
@@ -72,7 +75,7 @@ public class SectorDibujo implements Observable {
             }
         }
                 
-        return new LineaNula(new Posicion(0,0), new Posicion(0,0));
+        throw new FueraDeLimiteExcepcion();
     }
 
     public Personaje obtenerPersonaje() {

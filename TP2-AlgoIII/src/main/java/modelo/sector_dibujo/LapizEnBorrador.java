@@ -1,4 +1,5 @@
 package modelo.sector_dibujo;
+import excepciones.FueraDeLimiteExcepcion;
 
 public class LapizEnBorrador extends Lapiz {
 
@@ -8,7 +9,13 @@ public class LapizEnBorrador extends Lapiz {
         Posicion coordenada2 = new Posicion(posicion2);
 
         SectorDibujo tablero = SectorDibujo.obtenerInstancia();
-        tablero.agregarLinea(new LineaNula(coordenada1, coordenada2));
+        
+        try {
+        	tablero.agregarLinea(new LineaNula(coordenada1, coordenada2));
+        }
+        catch(FueraDeLimiteExcepcion e) {
+        	System.out.println("Linea fuera de limites");
+        }
 
     }
 	
