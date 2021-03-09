@@ -25,8 +25,7 @@ public class HandlerColores implements EventHandler<ActionEvent>  {
         bloquesMap.put("Verde",new Verde());
         bloquesMap.put("Amarillo",new Amarillo());
         bloquesMap.put("Violeta",new Violeta());
-
-
+        comboBox.getSelectionModel().selectFirst();
     }
 
     @Override

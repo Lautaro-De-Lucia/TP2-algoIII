@@ -35,6 +35,7 @@ public class ObtenerBotonera extends VBox {
         bloquesLapiz.getChildren().add(labelLapiz);
         bloquesLapiz.getChildren().add(new BotonLapizAbajo(controlador));
         bloquesLapiz.getChildren().add(new BotonLapizArriba(controlador));
+        bloquesLapiz.getChildren().add(new BotonLapizBorrador(controlador));
 
         String listaColores[] = { "Negro", "Blanco", "Azul", "Naranja", "Verde", "Rojo", "Amarillo", "Violeta" };
         ComboBox comboBox = new ComboBox(FXCollections.observableArrayList(listaColores));

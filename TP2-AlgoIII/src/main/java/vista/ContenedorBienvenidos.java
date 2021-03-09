@@ -19,7 +19,14 @@ public class ContenedorBienvenidos extends StackPane{
         this.setPadding(new Insets(20.0D));
 
         Button botonEntrar = new Button();
-        botonEntrar.setText("Comenzar Juego");
+        Image botonEntrarImagen = new Image("Comenzar juego.png");
+        botonEntrar.setStyle("-fx-background-color: transparent");
+        ImageView view = new ImageView(botonEntrarImagen);
+        view.setFitHeight(55);
+        view.setPreserveRatio(true);
+        view.setSmooth(true);
+        botonEntrar.setPrefSize(30,20);
+        botonEntrar.setGraphic(view);
 
         Image imagen = new Image("welcome.png");
         ImageView mv = new ImageView(imagen);

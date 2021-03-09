@@ -145,6 +145,7 @@ public class VistaTablero extends Group implements Observador {
 
     @Override
     public void refrescar() {
+        reiniciarTablero();
         Personaje personaje = sectorDibujo.obtenerPersonaje();
         Posicion personajePos = personaje.obtenerPosicion();
 
