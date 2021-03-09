@@ -9,6 +9,8 @@ import javafx.scene.shape.Line;
 import modelo.Observador;
 import modelo.sector_dibujo.*;
 
+import java.util.ArrayList;
+
 
 public class VistaTablero extends Group implements Observador {
     public int anchoPersonaje = 64;
@@ -17,6 +19,7 @@ public class VistaTablero extends Group implements Observador {
     public int altoTablero;
     private int grosorLinea = 5;
     public int dimensionOriginal;
+    public int escala;
 
     private Pane capaLineas;
     private Pane capaPersonaje;
@@ -28,6 +31,7 @@ public class VistaTablero extends Group implements Observador {
         sectorDibujo.addObserver(this);
         this.dimensionOriginal = sectorDibujo.getDimension();
 
+
         capaPersonaje = new Pane();
         capaPersonaje.setStyle("-fx-background-color: transparent");
 
@@ -35,26 +39,13 @@ public class VistaTablero extends Group implements Observador {
 
         anchoTablero = ancho;
         altoTablero = alto;
+        this.escala = ancho/dimensionOriginal;
 
         personaje = nuevoPersonaje(ancho,alto);
 
         capaPersonaje.getChildren().add(personaje);
         this.getChildren().add(capaLineas);
         this.getChildren().add(capaPersonaje);
-    }
-
-    public void dibujarLinea(int xChange, int yChange, modelo.sector_dibujo.Color color){
-        Line nuevaLinea = new Line();
-        nuevaLinea.setStartX(personaje.getX());
-        nuevaLinea.setStartY(personaje.getY());
-        nuevaLinea.setEndX(xChange);
-        nuevaLinea.setEndY(altoTablero-yChange);
-        nuevaLinea.setStrokeWidth(grosorLinea);
-        if (color == modelo.sector_dibujo.Color.NULO) {
-            nuevaLinea.setStroke(Color.TRANSPARENT);
-        }
-        this.capaLineas.getChildren().add(nuevaLinea);
-
     }
 
     public void moverPersonaje(int posX, int posY, modelo.sector_dibujo.Color colorActual){
@@ -104,17 +95,57 @@ public class VistaTablero extends Group implements Observador {
         this.getChildren().add(0,nuevaCapa);
     }
 
+    public void dibujarLinea(Linea linea){
+        Line nuevaLinea = new Line();
+        nuevaLinea.setStartX(linea.getPunto1().obtenerCoordX()*escala);
+        nuevaLinea.setStartY(this.altoTablero-linea.getPunto1().obtenerCoordY()*escala);
+        nuevaLinea.setEndX(linea.getPunto2().obtenerCoordX()*escala);
+        nuevaLinea.setEndY(this.altoTablero-linea.getPunto2().obtenerCoordY()*escala);
+        nuevaLinea.setStrokeWidth(grosorLinea);
+        switch (linea.getColor()){
+            case NEGRO:
+                nuevaLinea.setStroke(Color.BLACK);
+                break;
+            case AZUL:
+                nuevaLinea.setStroke(Color.BLUE);
+                break;
+            case ROJO:
+                nuevaLinea.setStroke(Color.RED);
+                break;
+            case VERDE:
+                nuevaLinea.setStroke(Color.GREEN);
+                break;
+            case BLANCO:
+                nuevaLinea.setStroke(Color.WHITE);
+                break;
+            case NARANJA:
+                nuevaLinea.setStroke(Color.ORANGE);
+                break;
+            case VIOLETA:
+                nuevaLinea.setStroke(Color.VIOLET);
+                break;
+            case AMARILLO:
+                nuevaLinea.setStroke(Color.YELLOW);
+                break;
+        }
+        this.capaLineas.getChildren().add(nuevaLinea);
+    }
+
+    public void dibujarLineas(){
+        ArrayList<Linea> lineas = this.sectorDibujo.getLineas();
+        for (int i = 0; i< lineas.size(); i++){
+            if (lineas.get(i).getColor() != modelo.sector_dibujo.Color.NULO){
+                dibujarLinea(lineas.get(i));
+            }
+        }
+    }
+
     @Override
     public void refrescar() {
-        Posicion actual = new Posicion((int)this.personaje.getX()/50, (int) ((this.personaje.getY()/50)));
         Personaje personaje = sectorDibujo.obtenerPersonaje();
         Posicion personajePos = personaje.obtenerPosicion();
 
-
-        Posicion nuevaPos = new Posicion(personajePos.obtenerCoordX(),personajePos.obtenerCoordY());
-        Posicion testPos = new Posicion(actual.obtenerCoordX(),this.dimensionOriginal-actual.obtenerCoordY());
-        Linea aDibujar = sectorDibujo.obtenerLinea(testPos,nuevaPos);
-        dibujarLinea(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, aDibujar.getColor());
-        moverPersonaje(personajePos.obtenerCoordX()*50,personajePos.obtenerCoordY()*50, personaje.obtenerLapiz().obtenerColor());
+        dibujarLineas();
+        moverPersonaje(personajePos.obtenerCoordX()*escala,personajePos.obtenerCoordY()*escala, personaje.obtenerLapiz().obtenerColor());
     }
 }

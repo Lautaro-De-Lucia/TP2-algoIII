@@ -138,6 +138,10 @@ public class SectorDibujo implements Observable {
         }
     }
 
+    public ArrayList<Linea> getLineas(){
+        return tablero;
+    }
+
     public int getDimension(){
         return dimension;
     }
