@@ -90,7 +90,7 @@ public class BloqueTest {
 		
 		Bloque bloqueLapizAbajo = new LapizAbajo();
 		Posicion posInicial = new Posicion(8, 8);
-		Posicion posFinal = new Posicion(7, 8);
+		Posicion posFinal = new Posicion(8, 9);
 		Direccion norte = new Direccion();
 		norte.norte();
 		Linea lineaReferencia = new LineaSolida(posInicial, posFinal);

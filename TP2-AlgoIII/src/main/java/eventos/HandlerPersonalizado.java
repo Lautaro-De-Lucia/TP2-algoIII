@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import modelo.sector_bloques.BloqueCompuesto;
 import modelo.sector_bloques.Invocador;
+import modelo.sector_bloques.Personalizado;
 import vista.ContenedorAux;
 
 public class HandlerPersonalizado implements EventHandler<ActionEvent> {
@@ -14,7 +15,6 @@ public class HandlerPersonalizado implements EventHandler<ActionEvent> {
     private Controlador invC;
     private Invocador invocador;
     public HandlerPersonalizado(Stage primaryStage, Controlador invControl, Invocador invocador){
-        //this.controlador = controlador;
         this.stage = primaryStage;
         this.invC = invControl;
         this.invocador = invocador;
@@ -22,7 +22,7 @@ public class HandlerPersonalizado implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        BloqueCompuesto personalizado = new BloqueCompuesto();
+        BloqueCompuesto personalizado = Personalizado.obtenerPersonalizado();
         ContenedorAux ventanaAux = new ContenedorAux(invocador, invC, personalizado);
         Scene escenaAux = new Scene(ventanaAux, 600,900);
         stage.setScene(escenaAux);
