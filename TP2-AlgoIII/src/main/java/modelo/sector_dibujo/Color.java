@@ -1,5 +1,5 @@
 package modelo.sector_dibujo;
 
 public enum Color {
-	NEGRO, BLANCO, ROJO, VERDE, AMARILLO, NULO;
+	NEGRO, BLANCO, AZUL, NARANJA, VERDE, ROJO,  AMARILLO, VIOLETA, NULO;
 }
